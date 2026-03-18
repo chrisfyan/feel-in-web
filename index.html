@@ -27,7 +27,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -41,178 +41,144 @@
             color: #F0EDF6;
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: flex-end;
             position: relative;
+            overflow: hidden;
         }
 
-        /* Ambient background glow */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(107, 91, 149, 0.15) 0%, rgba(196, 169, 98, 0.05) 40%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Subtle star particles */
-        .stars {
+        /* ── Full background image ── */
+        .bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            background: url('bg.png') center center / cover no-repeat;
             z-index: 0;
         }
 
-        .star {
+        /* Subtle gradient at the bottom so buttons/email are readable */
+        .bg::after {
+            content: '';
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #F0EDF6;
-            border-radius: 50%;
-            animation: twinkle var(--duration) ease-in-out infinite;
-            opacity: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(13, 11, 26, 0.85) 0%, rgba(13, 11, 26, 0.3) 60%, transparent 100%);
         }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: var(--max-opacity); }
-        }
-
-        .container {
+        /* ── Bottom content ── */
+        .bottom {
             position: relative;
             z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem;
-            text-align: center;
-            animation: fadeIn 1.2s ease-out;
+            padding: 0 2rem 3rem;
+            animation: fadeUp 1s ease-out;
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .logo {
-            width: 260px;
-            max-width: 65vw;
-            margin-bottom: 1.8rem;
-            filter: drop-shadow(0 0 40px rgba(107, 91, 149, 0.3));
-        }
-
-        .tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            font-weight: 400;
-            color: #B8A9D4;
-            letter-spacing: 0.02em;
-            margin-bottom: 2.5rem;
-            line-height: 1.5;
-        }
-
+        /* ── Store buttons ── */
         .stores {
             display: flex;
-            gap: 1rem;
+            gap: 0.7rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
         }
 
         .store-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            background: rgba(107, 91, 149, 0.15);
-            border: 1px solid rgba(107, 91, 149, 0.3);
+            gap: 0.5rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: #F0EDF6;
             text-decoration: none;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             font-weight: 500;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
 
         .store-btn:hover {
-            background: rgba(107, 91, 149, 0.3);
-            border-color: rgba(184, 169, 212, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(184, 169, 212, 0.35);
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(107, 91, 149, 0.2);
+            box-shadow: 0 8px 30px rgba(107, 91, 149, 0.15);
+        }
+
+        .store-btn:active {
+            transform: translateY(0);
         }
 
         .store-btn svg {
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
+            opacity: 0.85;
         }
 
+        /* ── Redirect message ── */
         .redirect-msg {
-            font-size: 0.8rem;
-            color: rgba(184, 169, 212, 0.5);
-            margin-top: 0.5rem;
-            font-weight: 300;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 1.5rem;
-            z-index: 1;
             font-size: 0.75rem;
-            color: rgba(184, 169, 212, 0.3);
+            color: rgba(184, 169, 212, 0.4);
             font-weight: 300;
-            letter-spacing: 0.05em;
+            min-height: 1.2em;
+            margin-bottom: 1.5rem;
         }
 
-        .footer a {
-            color: rgba(184, 169, 212, 0.4);
+        /* ── Email ── */
+        .email {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        .email a {
+            color: #B8A9D4;
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        .footer a:hover {
-            color: #B8A9D4;
+        .email a:hover {
+            color: #F0EDF6;
         }
 
-        /* Loading state before redirect */
-        .loading-dot {
-            display: inline-block;
-            animation: pulse 1.4s ease-in-out infinite;
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .bottom {
+                padding-bottom: 2rem;
+            }
         }
 
-        .loading-dot:nth-child(2) { animation-delay: 0.2s; }
-        .loading-dot:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes pulse {
-            0%, 80%, 100% { opacity: 0.2; }
-            40% { opacity: 1; }
+        /* Tall/portrait screens: center the background image higher */
+        @media (max-aspect-ratio: 3/4) {
+            .bg {
+                background-position: center 35%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Decorative stars -->
-    <div class="stars" id="stars"></div>
+    <div class="bg"></div>
 
-    <div class="container">
-        <img src="logotipo.png" alt="Feel-In" class="logo">
-
-        <p class="tagline">Conectá desde lo que sentís</p>
-
+    <div class="bottom">
         <div class="stores">
             <!-- TODO: Replace # with actual store URLs when published -->
             <a href="#" class="store-btn" id="btn-ios" aria-label="Descargar en App Store">
@@ -231,46 +197,27 @@
         </div>
 
         <p class="redirect-msg" id="redirect-msg"></p>
-    </div>
 
-    <div class="footer">
-        <a href="mailto:info@feel-in.app">info@feel-in.app</a>
+        <div class="email">
+            <a href="mailto:info@feel-in.app">info@feel-in.app</a>
+        </div>
     </div>
 
     <script>
-        // Generate subtle star particles
+        // Smart redirect
         (function() {
-            const container = document.getElementById('stars');
-            const count = 40;
-            for (let i = 0; i < count; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.setProperty('--duration', (3 + Math.random() * 4) + 's');
-                star.style.setProperty('--max-opacity', (0.2 + Math.random() * 0.5).toString());
-                star.style.animationDelay = (Math.random() * 5) + 's';
-                container.appendChild(star);
-            }
-        })();
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            var msg = document.getElementById('redirect-msg');
+            var IOS_URL = '#';
+            var ANDROID_URL = '#';
 
-        // Smart redirect based on platform
-        (function() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const msgEl = document.getElementById('redirect-msg');
-
-            // TODO: Replace these with actual store URLs
-            const IOS_URL = '#'; // e.g., 'https://apps.apple.com/app/feel-in/idXXXXXXXXX'
-            const ANDROID_URL = '#'; // e.g., 'https://play.google.com/store/apps/details?id=com.feelin.app'
-
-            // Don't auto-redirect while store URLs are placeholders
             if (IOS_URL === '#' && ANDROID_URL === '#') return;
 
             if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-                msgEl.innerHTML = 'Redirigiendo a App Store<span class="loading-dot">.</span><span class="loading-dot">.</span><span class="loading-dot">.</span>';
+                msg.textContent = 'Redirigiendo a App Store...';
                 setTimeout(function() { window.location.href = IOS_URL; }, 1500);
             } else if (/android/i.test(ua)) {
-                msgEl.innerHTML = 'Redirigiendo a Google Play<span class="loading-dot">.</span><span class="loading-dot">.</span><span class="loading-dot">.</span>';
+                msg.textContent = 'Redirigiendo a Google Play...';
                 setTimeout(function() { window.location.href = ANDROID_URL; }, 1500);
             }
         })();
