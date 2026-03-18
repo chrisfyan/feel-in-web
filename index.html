@@ -59,7 +59,6 @@
             z-index: 0;
         }
 
-        /* Top gradient for description readability */
         .bg::before {
             content: '';
             position: absolute;
@@ -71,7 +70,6 @@
             z-index: 1;
         }
 
-        /* Bottom gradient for buttons/email readability */
         .bg::after {
             content: '';
             position: absolute;
@@ -83,7 +81,7 @@
             z-index: 1;
         }
 
-        /* ── Top content (description) ── */
+        /* ── Top content ── */
         .top {
             position: relative;
             z-index: 2;
@@ -110,7 +108,7 @@
             text-shadow: 0 2px 20px rgba(13, 11, 26, 0.8);
         }
 
-        /* ── Bottom content (buttons + email) ── */
+        /* ── Bottom content ── */
         .bottom {
             position: fixed;
             bottom: 0;
@@ -135,7 +133,7 @@
             gap: 0.7rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         .store-btn {
@@ -154,6 +152,7 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            cursor: pointer;
         }
 
         .store-btn:hover {
@@ -174,13 +173,28 @@
             opacity: 0.85;
         }
 
-        /* ── Redirect message ── */
-        .redirect-msg {
+        /* ── Subscribe button ── */
+        .subscribe-btn {
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            background: rgba(196, 169, 98, 0.12);
+            border: 1px solid rgba(196, 169, 98, 0.25);
+            color: #C4A962;
+            font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
-            color: rgba(184, 169, 212, 0.4);
-            font-weight: 300;
-            min-height: 1.2em;
-            margin-bottom: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            margin-bottom: 1.6rem;
+        }
+
+        .subscribe-btn:hover {
+            background: rgba(196, 169, 98, 0.2);
+            border-color: rgba(196, 169, 98, 0.4);
+            transform: translateY(-1px);
         }
 
         /* ── Email ── */
@@ -207,7 +221,6 @@
             right: 1.2rem;
             z-index: 3;
             display: flex;
-            gap: 0;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -238,6 +251,161 @@
             color: #9B93B0;
         }
 
+        /* ── Modal overlay ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 11, 26, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 10;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.25s ease-out;
+        }
+
+        .modal-overlay.visible {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal {
+            background: linear-gradient(145deg, #1E1A2D, #161320);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            width: calc(100% - 3rem);
+            position: relative;
+            animation: modalSlide 0.3s ease-out;
+        }
+
+        @keyframes modalSlide {
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #6B6380;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #F0EDF6;
+        }
+
+        .modal-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #F0EDF6;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #9B93B0;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #F0EDF6;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .email-input::placeholder {
+            color: #6B6380;
+        }
+
+        .email-input:focus {
+            border-color: rgba(107, 91, 149, 0.5);
+        }
+
+        .email-input.error {
+            border-color: rgba(232, 93, 117, 0.6);
+        }
+
+        .submit-btn {
+            padding: 0.7rem 1.2rem;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, #6B5B95, #8B7BB5);
+            color: #F0EDF6;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .submit-btn:hover {
+            box-shadow: 0 4px 20px rgba(107, 91, 149, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-msg {
+            font-size: 0.75rem;
+            margin-top: 0.8rem;
+            min-height: 1.1em;
+            text-align: center;
+        }
+
+        .form-msg.success {
+            color: #6BCB77;
+        }
+
+        .form-msg.error {
+            color: #E85D75;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 480px) {
             .top {
@@ -248,6 +416,9 @@
             }
             .bottom {
                 padding: 0 1.5rem 2rem;
+            }
+            .input-row {
+                flex-direction: column;
             }
         }
 
@@ -260,7 +431,6 @@
             }
         }
 
-        /* Very tall screens (mobile portrait) */
         @media (max-height: 700px) {
             .top {
                 padding-top: 3rem;
@@ -287,17 +457,17 @@
         <p class="description" id="description"></p>
     </div>
 
-    <!-- Buttons + email at the bottom -->
+    <!-- Buttons + subscribe + email at the bottom -->
     <div class="bottom">
         <div class="stores">
-            <a href="#" class="store-btn" id="btn-ios" aria-label="Descargar en App Store">
+            <a class="store-btn" id="btn-ios" onclick="openModal('store')" role="button">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 App Store
             </a>
 
-            <a href="#" class="store-btn" id="btn-android" aria-label="Descargar en Google Play">
+            <a class="store-btn" id="btn-android" onclick="openModal('store')" role="button">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3.18 23.67c-.35-.2-.55-.58-.55-1.06V1.39c0-.48.2-.86.55-1.06l11.07 11.67L3.18 23.67zm14.83-8.43L5.42 22.5l10.14-10.7 2.45 3.44zm1.31-1.38L16.77 12l2.55-1.86 2.55 1.41c.67.37.67.97 0 1.34l-2.55 1.37zM5.42 1.5l12.59 7.26-2.45 2.58L5.42 1.5z"/>
                 </svg>
@@ -305,45 +475,85 @@
             </a>
         </div>
 
-        <p class="redirect-msg" id="redirect-msg"></p>
+        <button class="subscribe-btn" id="subscribe-btn" onclick="openModal('subscribe')">
+            <span id="subscribe-label"></span>
+        </button>
 
         <div class="email">
             <a href="mailto:info@feel-in.app">info@feel-in.app</a>
         </div>
     </div>
 
+    <!-- Subscribe modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <p class="modal-title" id="modal-title"></p>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+            <div class="input-row">
+                <input type="email" class="email-input" id="email-input" placeholder="email@example.com" autocomplete="email">
+                <button class="submit-btn" id="submit-btn" onclick="submitEmail()"></button>
+            </div>
+            <p class="form-msg" id="form-msg"></p>
+        </div>
+    </div>
+
     <script>
+        // ── Google Form config ──
+        var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc-xzNRt7bP_nGp0hbdlHUfISjfk9a9VUA5fCYo4PmVNf_9YA/formResponse';
+        var ENTRY_ID = 'entry.1074143854';
+
+        // ── i18n ──
         var i18n = {
             es: {
                 title: 'Feel-In — Conectá desde lo que sentís',
                 metaDesc: 'Feel-In es la app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.',
                 description: 'La app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.',
-                iosLabel: 'Descargar en App Store',
-                androidLabel: 'Descargar en Google Play',
-                redirectIos: 'Redirigiendo a App Store...',
-                redirectAndroid: 'Redirigiendo a Google Play...'
+                subscribeLabel: 'Suscribirse al newsletter',
+                modalTitleStore: 'Próximamente',
+                modalSubtitleStore: 'Recibí un email cuando la app esté disponible.',
+                modalTitleSubscribe: 'Mantenéte al día',
+                modalSubtitleSubscribe: 'Enteráte de los lanzamientos y últimas novedades.',
+                submitBtn: 'Suscribir',
+                submitting: 'Enviando...',
+                successMsg: '¡Listo! Te avisamos cuando haya novedades.',
+                errorEmail: 'Ingresá un email válido.',
+                errorGeneric: 'Hubo un error. Intentá de nuevo.'
             },
             en: {
                 title: 'Feel-In — Connect from what you feel',
                 metaDesc: 'Feel-In is the app where connections are born from what you think and feel. Answer deep questions, discover who vibes like you.',
                 description: 'The app where connections are born from what you think and feel. Answer deep questions, discover who vibes like you.',
-                iosLabel: 'Download on App Store',
-                androidLabel: 'Get it on Google Play',
-                redirectIos: 'Redirecting to App Store...',
-                redirectAndroid: 'Redirecting to Google Play...'
+                subscribeLabel: 'Subscribe to newsletter',
+                modalTitleStore: 'Coming soon',
+                modalSubtitleStore: 'Get an email when the app is available.',
+                modalTitleSubscribe: 'Stay in the loop',
+                modalSubtitleSubscribe: 'Get notified about launches and latest news.',
+                submitBtn: 'Subscribe',
+                submitting: 'Sending...',
+                successMsg: "You're in! We'll notify you when there's news.",
+                errorEmail: 'Enter a valid email.',
+                errorGeneric: 'Something went wrong. Try again.'
             },
             pt: {
                 title: 'Feel-In — Conecte-se a partir do que você sente',
                 metaDesc: 'Feel-In é o app onde as conexões nascem do que você pensa e sente. Responda perguntas profundas, descubra quem vibra como você.',
                 description: 'O app onde as conexões nascem do que você pensa e sente. Responda perguntas profundas, descubra quem vibra como você.',
-                iosLabel: 'Baixar na App Store',
-                androidLabel: 'Disponível no Google Play',
-                redirectIos: 'Redirecionando para a App Store...',
-                redirectAndroid: 'Redirecionando para o Google Play...'
+                subscribeLabel: 'Inscreva-se na newsletter',
+                modalTitleStore: 'Em breve',
+                modalSubtitleStore: 'Receba um email quando o app estiver disponível.',
+                modalTitleSubscribe: 'Fique por dentro',
+                modalSubtitleSubscribe: 'Fique por dentro dos lançamentos e últimas novidades.',
+                submitBtn: 'Inscrever-se',
+                submitting: 'Enviando...',
+                successMsg: 'Pronto! Avisaremos quando houver novidades.',
+                errorEmail: 'Insira um email válido.',
+                errorGeneric: 'Ocorreu um erro. Tente novamente.'
             }
         };
 
         var currentLang = 'es';
+        var currentModalType = 'subscribe';
 
         function setLang(lang) {
             currentLang = lang;
@@ -352,14 +562,114 @@
             document.title = t.title;
             document.querySelector('meta[name="description"]').setAttribute('content', t.metaDesc);
             document.getElementById('description').textContent = t.description;
-            document.getElementById('btn-ios').setAttribute('aria-label', t.iosLabel);
-            document.getElementById('btn-android').setAttribute('aria-label', t.androidLabel);
+            document.getElementById('subscribe-label').textContent = t.subscribeLabel;
             document.documentElement.lang = lang;
 
             document.getElementById('lang-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
             document.getElementById('lang-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
             document.getElementById('lang-pt').className = 'lang-btn' + (lang === 'pt' ? ' active' : '');
+
+            updateModalText();
         }
+
+        function updateModalText() {
+            var t = i18n[currentLang];
+            if (currentModalType === 'store') {
+                document.getElementById('modal-title').textContent = t.modalTitleStore;
+                document.getElementById('modal-subtitle').textContent = t.modalSubtitleStore;
+            } else {
+                document.getElementById('modal-title').textContent = t.modalTitleSubscribe;
+                document.getElementById('modal-subtitle').textContent = t.modalSubtitleSubscribe;
+            }
+            document.getElementById('submit-btn').textContent = t.submitBtn;
+        }
+
+        function openModal(type) {
+            currentModalType = type;
+            updateModalText();
+            document.getElementById('email-input').value = '';
+            document.getElementById('email-input').className = 'email-input';
+            document.getElementById('form-msg').textContent = '';
+            document.getElementById('form-msg').className = 'form-msg';
+            document.getElementById('submit-btn').disabled = false;
+            document.getElementById('modal-overlay').className = 'modal-overlay visible';
+            setTimeout(function() {
+                document.getElementById('email-input').focus();
+            }, 100);
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').className = 'modal-overlay';
+        }
+
+        function closeModalOutside(e) {
+            if (e.target === document.getElementById('modal-overlay')) {
+                closeModal();
+            }
+        }
+
+        function submitEmail() {
+            var t = i18n[currentLang];
+            var input = document.getElementById('email-input');
+            var msg = document.getElementById('form-msg');
+            var btn = document.getElementById('submit-btn');
+            var email = input.value.trim();
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                input.className = 'email-input error';
+                msg.textContent = t.errorEmail;
+                msg.className = 'form-msg error';
+                return;
+            }
+
+            input.className = 'email-input';
+            btn.disabled = true;
+            btn.textContent = t.submitting;
+            msg.textContent = '';
+
+            var iframe = document.createElement('iframe');
+            iframe.name = 'hidden_iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = FORM_URL;
+            form.target = 'hidden_iframe';
+            form.style.display = 'none';
+
+            var field = document.createElement('input');
+            field.type = 'hidden';
+            field.name = ENTRY_ID;
+            field.value = email;
+            form.appendChild(field);
+
+            document.body.appendChild(form);
+            form.submit();
+
+            setTimeout(function() {
+                msg.textContent = t.successMsg;
+                msg.className = 'form-msg success';
+                btn.textContent = t.submitBtn;
+                btn.disabled = false;
+                input.value = '';
+
+                document.body.removeChild(form);
+                document.body.removeChild(iframe);
+
+                setTimeout(closeModal, 2500);
+            }, 1000);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && document.getElementById('modal-overlay').classList.contains('visible')) {
+                submitEmail();
+            }
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
 
         // Auto-detect language
         (function() {
@@ -373,25 +683,6 @@
                 lang = 'en';
             }
             setLang(lang);
-        })();
-
-        // Smart redirect
-        (function() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var msg = document.getElementById('redirect-msg');
-            var IOS_URL = '#';
-            var ANDROID_URL = '#';
-
-            if (IOS_URL === '#' && ANDROID_URL === '#') return;
-
-            var t = i18n[currentLang];
-            if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-                msg.textContent = t.redirectIos;
-                setTimeout(function() { window.location.href = IOS_URL; }, 1500);
-            } else if (/android/i.test(ua)) {
-                msg.textContent = t.redirectAndroid;
-                setTimeout(function() { window.location.href = ANDROID_URL; }, 1500);
-            }
         })();
     </script>
 </body>
