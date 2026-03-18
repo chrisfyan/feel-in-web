@@ -24,10 +24,10 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- Fonts -->
+    <!-- Fonts (Inter for body/UI per PRD section 12) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -61,15 +61,15 @@
             z-index: 0;
         }
 
-        /* Subtle gradient at the bottom so buttons/email are readable */
+        /* Gradient at bottom for readability */
         .bg::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 40%;
-            background: linear-gradient(to top, rgba(13, 11, 26, 0.85) 0%, rgba(13, 11, 26, 0.3) 60%, transparent 100%);
+            height: 50%;
+            background: linear-gradient(to top, rgba(13, 11, 26, 0.9) 0%, rgba(13, 11, 26, 0.5) 50%, transparent 100%);
         }
 
         /* ── Bottom content ── */
@@ -79,7 +79,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 2rem 3rem;
+            padding: 0 2rem 2.5rem;
+            max-width: 480px;
             animation: fadeUp 1s ease-out;
         }
 
@@ -88,13 +89,24 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── Description text ── */
+        .description {
+            font-size: 0.88rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #9B93B0;
+            text-align: center;
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.25px;
+        }
+
         /* ── Store buttons ── */
         .stores {
             display: flex;
             gap: 0.7rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
         }
 
         .store-btn {
@@ -139,14 +151,14 @@
             color: rgba(184, 169, 212, 0.4);
             font-weight: 300;
             min-height: 1.2em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         /* ── Email ── */
         .email {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 400;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.4px;
         }
 
         .email a {
@@ -159,14 +171,54 @@
             color: #F0EDF6;
         }
 
+        /* ── Language toggle ── */
+        .lang-toggle {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.2rem;
+            z-index: 2;
+            display: flex;
+            gap: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        .lang-btn {
+            padding: 0.35rem 0.65rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #6B6380;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #F0EDF6;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #9B93B0;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 480px) {
             .bottom {
-                padding-bottom: 2rem;
+                padding: 0 1.5rem 2rem;
+            }
+            .description {
+                font-size: 0.82rem;
             }
         }
 
-        /* Tall/portrait screens: center the background image higher */
         @media (max-aspect-ratio: 3/4) {
             .bg {
                 background-position: center 35%;
@@ -178,7 +230,16 @@
 
     <div class="bg"></div>
 
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" id="lang-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="lang-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="lang-pt" onclick="setLang('pt')">PT</button>
+    </div>
+
     <div class="bottom">
+        <p class="description" id="description"></p>
+
         <div class="stores">
             <!-- TODO: Replace # with actual store URLs when published -->
             <a href="#" class="store-btn" id="btn-ios" aria-label="Descargar en App Store">
@@ -204,6 +265,71 @@
     </div>
 
     <script>
+        // ── i18n content ──
+        var i18n = {
+            es: {
+                title: 'Feel-In — Conectá desde lo que sentís',
+                metaDesc: 'Feel-In es la app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.',
+                description: 'La app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.',
+                iosLabel: 'Descargar en App Store',
+                androidLabel: 'Descargar en Google Play',
+                redirectIos: 'Redirigiendo a App Store...',
+                redirectAndroid: 'Redirigiendo a Google Play...'
+            },
+            en: {
+                title: 'Feel-In — Connect from what you feel',
+                metaDesc: 'Feel-In is the app where connections are born from what you think and feel. Answer deep questions, discover who vibes like you.',
+                description: 'The app where connections are born from what you think and feel. Answer deep questions, discover who vibes like you.',
+                iosLabel: 'Download on App Store',
+                androidLabel: 'Get it on Google Play',
+                redirectIos: 'Redirecting to App Store...',
+                redirectAndroid: 'Redirecting to Google Play...'
+            },
+            pt: {
+                title: 'Feel-In — Conecte-se a partir do que você sente',
+                metaDesc: 'Feel-In é o app onde as conexões nascem do que você pensa e sente. Responda perguntas profundas, descubra quem vibra como você.',
+                description: 'O app onde as conexões nascem do que você pensa e sente. Responda perguntas profundas, descubra quem vibra como você.',
+                iosLabel: 'Baixar na App Store',
+                androidLabel: 'Disponível no Google Play',
+                redirectIos: 'Redirecionando para a App Store...',
+                redirectAndroid: 'Redirecionando para o Google Play...'
+            }
+        };
+
+        var currentLang = 'es';
+
+        function setLang(lang) {
+            currentLang = lang;
+            var t = i18n[lang];
+
+            // Update content
+            document.title = t.title;
+            document.querySelector('meta[name="description"]').setAttribute('content', t.metaDesc);
+            document.getElementById('description').textContent = t.description;
+            document.getElementById('btn-ios').setAttribute('aria-label', t.iosLabel);
+            document.getElementById('btn-android').setAttribute('aria-label', t.androidLabel);
+            document.documentElement.lang = lang;
+
+            // Update toggle buttons
+            document.getElementById('lang-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+            document.getElementById('lang-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+            document.getElementById('lang-pt').className = 'lang-btn' + (lang === 'pt' ? ' active' : '');
+        }
+
+        // Auto-detect language from browser
+        (function() {
+            var browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+            var lang;
+            if (browserLang.startsWith('pt')) {
+                lang = 'pt';
+            } else if (browserLang.startsWith('es')) {
+                lang = 'es';
+            } else {
+                lang = 'en';
+            }
+            setLang(lang);
+        })();
+
         // Smart redirect
         (function() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -213,11 +339,12 @@
 
             if (IOS_URL === '#' && ANDROID_URL === '#') return;
 
+            var t = i18n[currentLang];
             if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-                msg.textContent = 'Redirigiendo a App Store...';
+                msg.textContent = t.redirectIos;
                 setTimeout(function() { window.location.href = IOS_URL; }, 1500);
             } else if (/android/i.test(ua)) {
-                msg.textContent = 'Redirigiendo a Google Play...';
+                msg.textContent = t.redirectAndroid;
                 setTimeout(function() { window.location.href = ANDROID_URL; }, 1500);
             }
         })();
