@@ -24,7 +24,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- Fonts (Inter for body/UI per PRD section 12) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,8 +44,6 @@
             min-height: 100dvh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
             position: relative;
             overflow: hidden;
         }
@@ -61,26 +59,68 @@
             z-index: 0;
         }
 
-        /* Gradient at bottom for readability */
+        /* Top gradient for description readability */
+        .bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            background: linear-gradient(to bottom, rgba(13, 11, 26, 0.8) 0%, rgba(13, 11, 26, 0.3) 60%, transparent 100%);
+            z-index: 1;
+        }
+
+        /* Bottom gradient for buttons/email readability */
         .bg::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 50%;
-            background: linear-gradient(to top, rgba(13, 11, 26, 0.9) 0%, rgba(13, 11, 26, 0.5) 50%, transparent 100%);
+            height: 40%;
+            background: linear-gradient(to top, rgba(13, 11, 26, 0.9) 0%, rgba(13, 11, 26, 0.4) 50%, transparent 100%);
+            z-index: 1;
         }
 
-        /* ── Bottom content ── */
-        .bottom {
+        /* ── Top content (description) ── */
+        .top {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4.5rem 2rem 0;
+            animation: fadeDown 1s ease-out;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .description {
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.65;
+            color: #B8A9D4;
+            text-align: center;
+            max-width: 520px;
+            letter-spacing: 0.2px;
+            text-shadow: 0 2px 20px rgba(13, 11, 26, 0.8);
+        }
+
+        /* ── Bottom content (buttons + email) ── */
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 0 2rem 2.5rem;
-            max-width: 480px;
             animation: fadeUp 1s ease-out;
         }
 
@@ -89,24 +129,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ── Description text ── */
-        .description {
-            font-size: 0.88rem;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #9B93B0;
-            text-align: center;
-            margin-bottom: 1.8rem;
-            letter-spacing: 0.25px;
-        }
-
         /* ── Store buttons ── */
         .stores {
             display: flex;
             gap: 0.7rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
         }
 
         .store-btn {
@@ -151,7 +180,7 @@
             color: rgba(184, 169, 212, 0.4);
             font-weight: 300;
             min-height: 1.2em;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         /* ── Email ── */
@@ -176,7 +205,7 @@
             position: fixed;
             top: 1.2rem;
             right: 1.2rem;
-            z-index: 2;
+            z-index: 3;
             display: flex;
             gap: 0;
             border-radius: 20px;
@@ -184,7 +213,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            animation: fadeUp 1s ease-out;
+            animation: fadeDown 1s ease-out;
         }
 
         .lang-btn {
@@ -211,17 +240,33 @@
 
         /* ── Responsive ── */
         @media (max-width: 480px) {
-            .bottom {
-                padding: 0 1.5rem 2rem;
+            .top {
+                padding: 4rem 1.5rem 0;
             }
             .description {
-                font-size: 0.82rem;
+                font-size: 0.92rem;
+            }
+            .bottom {
+                padding: 0 1.5rem 2rem;
             }
         }
 
         @media (max-aspect-ratio: 3/4) {
             .bg {
                 background-position: center 35%;
+            }
+            .top {
+                padding-top: 3.5rem;
+            }
+        }
+
+        /* Very tall screens (mobile portrait) */
+        @media (max-height: 700px) {
+            .top {
+                padding-top: 3rem;
+            }
+            .description {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -237,11 +282,14 @@
         <button class="lang-btn" id="lang-pt" onclick="setLang('pt')">PT</button>
     </div>
 
-    <div class="bottom">
+    <!-- Description at the top -->
+    <div class="top">
         <p class="description" id="description"></p>
+    </div>
 
+    <!-- Buttons + email at the bottom -->
+    <div class="bottom">
         <div class="stores">
-            <!-- TODO: Replace # with actual store URLs when published -->
             <a href="#" class="store-btn" id="btn-ios" aria-label="Descargar en App Store">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -265,7 +313,6 @@
     </div>
 
     <script>
-        // ── i18n content ──
         var i18n = {
             es: {
                 title: 'Feel-In — Conectá desde lo que sentís',
@@ -302,7 +349,6 @@
             currentLang = lang;
             var t = i18n[lang];
 
-            // Update content
             document.title = t.title;
             document.querySelector('meta[name="description"]').setAttribute('content', t.metaDesc);
             document.getElementById('description').textContent = t.description;
@@ -310,13 +356,12 @@
             document.getElementById('btn-android').setAttribute('aria-label', t.androidLabel);
             document.documentElement.lang = lang;
 
-            // Update toggle buttons
             document.getElementById('lang-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
             document.getElementById('lang-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
             document.getElementById('lang-pt').className = 'lang-btn' + (lang === 'pt' ? ' active' : '');
         }
 
-        // Auto-detect language from browser
+        // Auto-detect language
         (function() {
             var browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
             var lang;
