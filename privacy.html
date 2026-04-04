@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feel-IN — Privacy Policy</title>
+    <meta name="description" content="Feel-IN Privacy Policy. How we collect, use and protect your data.">
+    <meta name="theme-color" content="#0D0B1A">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Feel-IN — Privacy Policy">
+    <meta property="og:description" content="How we collect, use and protect your data.">
+    <meta property="og:url" content="https://feel-in.app/privacy">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0D0B1A;
+            color: #F0EDF6;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ── Language toggle ── */
+        .lang-toggle {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.2rem;
+            z-index: 3;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            animation: fadeDown 1s ease-out;
+        }
+
+        .lang-btn {
+            padding: 0.35rem 0.65rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #6B6380;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #F0EDF6;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #9B93B0;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Main container ── */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4.5rem 2rem 3rem;
+            animation: fadeUp 1s ease-out;
+        }
+
+        /* ── Back link ── */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #9B93B0;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #F0EDF6;
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ── Title ── */
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #F0EDF6;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: #6B6380;
+            margin-bottom: 2rem;
+        }
+
+        .intro {
+            font-size: 0.92rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #B8A9D4;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── Sections ── */
+        .section {
+            background: linear-gradient(145deg, rgba(30, 26, 45, 0.5), rgba(22, 19, 32, 0.5));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #F0EDF6;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .section p,
+        .section li {
+            font-size: 0.82rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #9B93B0;
+        }
+
+        .section p {
+            margin-bottom: 0.6rem;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.6rem;
+        }
+
+        .section li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #6B5B95;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+        }
+
+        .footer a {
+            color: #B8A9D4;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #F0EDF6;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .container {
+                padding: 4rem 1.5rem 2.5rem;
+            }
+            .page-title {
+                font-size: 1.3rem;
+            }
+            .section {
+                padding: 1.2rem;
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" id="lang-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="lang-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="lang-pt" onclick="setLang('pt')">PT</button>
+    </div>
+
+    <div class="container">
+        <a href="/" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span id="back-text">Volver</span>
+        </a>
+
+        <h1 class="page-title" id="page-title">Privacy Policy</h1>
+        <p class="last-updated" id="last-updated"></p>
+        <p class="intro" id="intro"></p>
+
+        <div id="sections"></div>
+
+        <div class="footer">
+            <a href="mailto:info@feel-in.app">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;opacity:0.7"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                info@feel-in.app
+            </a>
+        </div>
+    </div>
+
+    <script>
+        var content = {
+            es: {
+                back: 'Volver',
+                title: 'Privacy Policy',
+                updated: 'Last updated: April 2026',
+                intro: 'En Feel-In valoramos tu privacidad. Esta privacy policy describe qu\u00e9 informaci\u00f3n recopilamos, c\u00f3mo la utilizamos, cu\u00e1les son tus derechos y con qu\u00e9 base legal tratamos tus datos.',
+                sections: [
+                    {
+                        title: '1. Informaci\u00f3n que recopilamos',
+                        items: [
+                            '1.1. Informaci\u00f3n de registro: nombre, apellido, nickname, email (del proveedor de autenticaci\u00f3n), fecha de nacimiento, g\u00e9nero, pa\u00eds, avatar seleccionado.',
+                            '1.2. Informaci\u00f3n generada por el uso: respuestas a preguntas, mensajes de chat, evaluaciones (me gusta/no me gusta), historial de partidas, reportes de usuarios, reportes de preguntas, tickets de soporte, transacciones de Spark, preferencias de notificaciones, partidas ocultas.',
+                            '1.3. Informaci\u00f3n derivada: etiquetas tem\u00e1ticas de inter\u00e9s extra\u00eddas autom\u00e1ticamente de tus respuestas aprobadas (ver secci\u00f3n 5).',
+                            '1.4. Informaci\u00f3n t\u00e9cnica: identificador de dispositivo (para notificaciones push), idioma del dispositivo, informaci\u00f3n de autenticaci\u00f3n, datos de interacci\u00f3n con anuncios publicitarios (recopilados por Google AdMob).'
+                        ]
+                    },
+                    {
+                        title: '2. C\u00f3mo utilizamos tu informaci\u00f3n',
+                        items: [
+                            '2.1. Para el funcionamiento de la app: crear tu cuenta, emparejarte con otros usuarios, mostrar preguntas, moderar respuestas, gestionar Spark, enviar notificaciones.',
+                            '2.2. Para mejorar el emparejamiento: las etiquetas tem\u00e1ticas de inter\u00e9s se utilizan como un factor adicional en el sistema de emparejamiento para conectarte con usuarios de intereses compatibles. Este proceso es completamente automatizado.',
+                            '2.3. Para mejorar el servicio: anal\u00edtica agregada y an\u00f3nima, detecci\u00f3n de patrones de abuso.'
+                        ]
+                    },
+                    {
+                        title: '3. Base legal del tratamiento',
+                        items: [
+                            '3.1. Ejecuci\u00f3n contractual (Art. 6.1.b RGPD): el tratamiento de datos necesario para prestar el servicio (registro, emparejamiento, moderaci\u00f3n, gesti\u00f3n de Spark).',
+                            '3.2. Inter\u00e9s leg\u00edtimo (Art. 6.1.f RGPD): detecci\u00f3n de abuso, seguridad de la plataforma, mejoras del servicio basadas en anal\u00edtica agregada.',
+                            '3.3. Consentimiento (Art. 6.1.a RGPD): personalizaci\u00f3n de publicidad a trav\u00e9s de terceros (pod\u00e9s retirar este consentimiento en la configuraci\u00f3n de tu dispositivo).'
+                        ]
+                    },
+                    {
+                        title: '4. Informaci\u00f3n compartida con otros usuarios',
+                        items: [
+                            '4.1. La revelaci\u00f3n de tu informaci\u00f3n es progresiva y controlada:',
+                            { list: ['Al emparejar: solo tu avatar.', 'Primer Resuena: tu nombre.', 'Segundo Resuena: tu pa\u00eds.', 'Tercer Resuena: tu edad (calculada, no tu fecha exacta).', 'Al habilitar chat: tu nickname.'] },
+                            '4.2. Nunca se comparte con otros usuarios: tu apellido, email, fecha de nacimiento exacta ni g\u00e9nero.',
+                            '4.3. La informaci\u00f3n revelada se congela al momento de la revelaci\u00f3n. Si modific\u00e1s tu perfil posteriormente, la informaci\u00f3n ya revelada en partidas existentes no se actualiza.',
+                            '4.4. En el chat libre, vos decid\u00eds qu\u00e9 informaci\u00f3n adicional compartir.'
+                        ]
+                    },
+                    {
+                        title: '5. Moderaci\u00f3n por inteligencia artificial',
+                        items: [
+                            '5.1. Las respuestas son procesadas por un sistema de inteligencia artificial proporcionado por Google (Gemini) exclusivamente para verificar cumplimiento de normas de la comunidad.',
+                            '5.2. Como parte de este proceso, el sistema puede extraer entre 0 y 3 etiquetas tem\u00e1ticas an\u00f3nimas por respuesta aprobada (siempre en ingl\u00e9s). Estas etiquetas reflejan temas generales (ej. \u201cviajes\u201d, \u201cm\u00fasica\u201d, \u201cfilosof\u00eda\u201d) y se almacenan como frecuencias acumuladas en tu perfil para mejorar la calidad del emparejamiento. Las etiquetas no se comparten con otros usuarios ni son visibles en la app.',
+                            '5.3. La IA no almacena, aprende ni utiliza tus respuestas para entrenar modelos. Los datos se procesan en tiempo real y no se retienen en los sistemas de Google m\u00e1s all\u00e1 del procesamiento inmediato.',
+                            '5.4. La IA no modifica tus respuestas. Solo las aprueba o bloquea.'
+                        ]
+                    },
+                    {
+                        title: '6. Jugadores automatizados',
+                        items: [
+                            '6.1. Algunas partidas pueden incluir jugadores automatizados (bots) cuyas respuestas son generadas por inteligencia artificial. Estos jugadores se utilizan exclusivamente para mejorar la experiencia de bienvenida y evitar tiempos de espera prolongados (ver T\u00e9rminos y Condiciones, secci\u00f3n 10).',
+                            '6.2. Los perfiles de los jugadores automatizados no corresponden a personas reales. La informaci\u00f3n asociada a estos perfiles es ficticia.'
+                        ]
+                    },
+                    {
+                        title: '7. Servicios de terceros',
+                        items: [
+                            'Feel-In utiliza los siguientes servicios de terceros que pueden procesar tus datos:',
+                            '7.1. Firebase (Google Cloud Platform): almacenamiento de datos, autenticaci\u00f3n, funciones de servidor, mensajer\u00eda push.',
+                            '7.2. Google Gemini: moderaci\u00f3n de respuestas y extracci\u00f3n de etiquetas tem\u00e1ticas.',
+                            '7.3. Google AdMob: exhibici\u00f3n de anuncios publicitarios. AdMob puede recopilar identificadores de dispositivo, datos de interacci\u00f3n con anuncios y otra informaci\u00f3n t\u00e9cnica para personalizaci\u00f3n publicitaria. Pod\u00e9s gestionar tus preferencias de publicidad personalizada desde la configuraci\u00f3n de tu dispositivo.',
+                            '7.4. RevenueCat: procesamiento de compras dentro de la aplicaci\u00f3n. RevenueCat recibe informaci\u00f3n de transacciones y datos de la plataforma de pago (Apple/Google) necesarios para gestionar las compras.',
+                            'Cada servicio de terceros opera bajo su propia privacy policy.'
+                        ]
+                    },
+                    {
+                        title: '8. Almacenamiento y seguridad',
+                        items: [
+                            '8.1. Tu informaci\u00f3n se almacena en servidores de Firebase (Google Cloud Platform).',
+                            '8.2. Las contrase\u00f1as no se almacenan ya que la autenticaci\u00f3n se delega a Google y Apple.',
+                            '8.3. Las reglas de seguridad garantizan que solo puedas acceder a tu propia informaci\u00f3n y a la compartida dentro de tus partidas.'
+                        ]
+                    },
+                    {
+                        title: '9. Tus derechos',
+                        items: [
+                            '9.1. Acceso: pod\u00e9s ver tu informaci\u00f3n desde Configuraci\u00f3n.',
+                            '9.2. Modificaci\u00f3n: pod\u00e9s modificar tu nickname, avatar y pa\u00eds en cualquier momento desde la app. El cambio de nickname tiene un per\u00edodo de espera de 14 d\u00edas. Para modificar tu nombre o apellido, pod\u00e9s contactar a info@feel-in.app o eliminar tu cuenta y crear una nueva.',
+                            '9.3. Eliminaci\u00f3n: pod\u00e9s eliminar tu cuenta y todos tus datos en cualquier momento. La eliminaci\u00f3n es permanente e irreversible.',
+                            '9.4. Notificaciones: pod\u00e9s controlar qu\u00e9 notificaciones recib\u00eds desde Configuraci\u00f3n.',
+                            '9.5. Publicidad personalizada: pod\u00e9s desactivar la personalizaci\u00f3n de anuncios desde la configuraci\u00f3n de tu dispositivo.'
+                        ]
+                    },
+                    {
+                        title: '10. Retenci\u00f3n de datos',
+                        items: [
+                            '10.1. Datos de perfil: se conservan mientras tu cuenta est\u00e9 activa.',
+                            '10.2. Partidas activas y mensajes de chat: se conservan mientras la partida est\u00e9 activa. Las partidas con chat habilitado expiran tras 7 d\u00edas de inactividad.',
+                            '10.3. Partidas eliminadas: se retienen 30 d\u00edas tras la eliminaci\u00f3n antes de su borrado permanente.',
+                            '10.4. Notificaciones en la app: se eliminan autom\u00e1ticamente despu\u00e9s de 3 d\u00edas.',
+                            '10.5. Reportes y tickets de soporte: se conservan mientras sean necesarios para la gesti\u00f3n de la plataforma.',
+                            '10.6. Al eliminar tu cuenta, todos tus datos personales se borran de forma inmediata y permanente.'
+                        ]
+                    },
+                    {
+                        title: '11. Informaci\u00f3n de menores',
+                        items: [
+                            '11.1. Feel-In no est\u00e1 dirigida a menores de 18 a\u00f1os y no recopila intencionalmente informaci\u00f3n de menores.',
+                            '11.2. Si tomamos conocimiento de que un menor ha creado una cuenta, la eliminaremos sin previo aviso.'
+                        ]
+                    },
+                    {
+                        title: '12. Cookies y rastreo',
+                        items: [
+                            '12.1. Feel-In no utiliza cookies. Utiliza almacenamiento local del dispositivo para preferencias de sesi\u00f3n.',
+                            '12.2. Utilizamos Firebase Analytics para m\u00e9tricas agregadas an\u00f3nimas.',
+                            '12.3. Google AdMob puede utilizar identificadores publicitarios del dispositivo (IDFA en iOS, GAID en Android) para personalizaci\u00f3n de anuncios, sujeto a la configuraci\u00f3n de privacidad del dispositivo del usuario.'
+                        ]
+                    },
+                    {
+                        title: '13. Transferencia internacional',
+                        items: [
+                            '13.1. Tu informaci\u00f3n puede almacenarse en servidores fuera de tu pa\u00eds de residencia (Google Cloud). Al usar Feel-In, consent\u00eds esta transferencia.',
+                            '13.2. Independientemente de d\u00f3nde se almacenen tus datos, Feel-In respeta los derechos que te corresponden bajo la legislaci\u00f3n de protecci\u00f3n de datos vigente en tu pa\u00eds de residencia.'
+                        ]
+                    },
+                    {
+                        title: '14. Cambios en esta privacy policy',
+                        items: [
+                            '14.1. Podemos actualizar esta Privacy Policy peri\u00f3dicamente. Los cambios significativos ser\u00e1n notificados a trav\u00e9s de la app.'
+                        ]
+                    },
+                    {
+                        title: '15. Contacto',
+                        items: [
+                            'Para consultas sobre privacidad: info@feel-in.app'
+                        ]
+                    }
+                ]
+            },
+            en: {
+                back: 'Back',
+                title: 'Privacy Policy',
+                updated: 'Last updated: April 2026',
+                intro: 'At Feel-In, we value your privacy. This policy describes what information we collect, how we use it, what your rights are, and the legal basis for processing your data.',
+                sections: [
+                    {
+                        title: '1. Information we collect',
+                        items: [
+                            '1.1. Registration information: name, surname, nickname, email (from authentication provider), date of birth, gender, country, selected avatar.',
+                            '1.2. Usage-generated information: question responses, chat messages, evaluations (like/no like), game history, user reports, question reports, support tickets, Spark transactions, notification preferences, hidden games.',
+                            '1.3. Derived information: thematic interest tags automatically extracted from your approved responses (see section 5).',
+                            '1.4. Technical information: device identifier (for push notifications), device language, authentication information, ad interaction data (collected by Google AdMob).'
+                        ]
+                    },
+                    {
+                        title: '2. How we use your information',
+                        items: [
+                            '2.1. For app operation: create your account, match you with other users, display questions, moderate responses, manage Spark, send notifications.',
+                            '2.2. To improve matchmaking: thematic interest tags are used as an additional factor in the matchmaking system to connect you with users of compatible interests. This process is fully automated.',
+                            '2.3. To improve the service: aggregated anonymous analytics, abuse pattern detection.'
+                        ]
+                    },
+                    {
+                        title: '3. Legal basis for processing',
+                        items: [
+                            '3.1. Contractual performance (Art. 6.1.b GDPR): data processing necessary to provide the service (registration, matchmaking, moderation, Spark management).',
+                            '3.2. Legitimate interest (Art. 6.1.f GDPR): abuse detection, platform security, service improvements based on aggregated analytics.',
+                            '3.3. Consent (Art. 6.1.a GDPR): ad personalization through third parties (you can withdraw this consent in your device settings).'
+                        ]
+                    },
+                    {
+                        title: '4. Information shared with other users',
+                        items: [
+                            '4.1. Your information is revealed progressively and in a controlled manner:',
+                            { list: ['When matched: only your avatar.', 'First Vibrates: your name.', 'Second Vibrates: your country.', 'Third Vibrates: your age (calculated, not your exact date).', 'When chat is enabled: your nickname.'] },
+                            '4.2. Never shared with other users: your surname, email, exact date of birth, or gender.',
+                            '4.3. Revealed information is frozen at the time of reveal. If you modify your profile afterwards, information already revealed in existing games is not updated.',
+                            '4.4. In free chat, you decide what additional information to share.'
+                        ]
+                    },
+                    {
+                        title: '5. AI moderation',
+                        items: [
+                            '5.1. Responses are processed by an artificial intelligence system provided by Google (Gemini) exclusively to verify compliance with community rules.',
+                            '5.2. As part of this process, the system may extract between 0 and 3 anonymous thematic tags per approved response (always in English). These tags reflect general topics (e.g., \u201ctravel,\u201d \u201cmusic,\u201d \u201cphilosophy\u201d) and are stored as cumulative frequencies in your profile to improve matchmaking quality. Tags are not shared with other users and are not visible in the app.',
+                            '5.3. The AI does not store, learn from, or use your responses for model training. Data is processed in real time and is not retained in Google\u2019s systems beyond immediate processing.',
+                            '5.4. The AI does not modify your responses. It only approves or blocks them.'
+                        ]
+                    },
+                    {
+                        title: '6. Automated players',
+                        items: [
+                            '6.1. Some games may include automated players (bots) whose responses are generated by artificial intelligence. These players are used exclusively to improve the welcome experience and avoid prolonged wait times (see Terms and Conditions, section 10).',
+                            '6.2. Automated player profiles do not correspond to real people. Information associated with these profiles is fictitious.'
+                        ]
+                    },
+                    {
+                        title: '7. Third-party services',
+                        items: [
+                            'Feel-In uses the following third-party services that may process your data:',
+                            '7.1. Firebase (Google Cloud Platform): data storage, authentication, server functions, push messaging.',
+                            '7.2. Google Gemini: response moderation and thematic tag extraction.',
+                            '7.3. Google AdMob: ad display. AdMob may collect device identifiers, ad interaction data, and other technical information for ad personalization. You can manage your personalized advertising preferences from your device settings.',
+                            '7.4. RevenueCat: in-app purchase processing. RevenueCat receives transaction information and payment platform data (Apple/Google) necessary to manage purchases.',
+                            'Each third-party service operates under its own privacy policy.'
+                        ]
+                    },
+                    {
+                        title: '8. Storage and security',
+                        items: [
+                            '8.1. Your information is stored on Firebase (Google Cloud Platform) servers.',
+                            '8.2. Passwords are not stored as authentication is delegated to Google and Apple.',
+                            '8.3. Security rules ensure you can only access your own information and information shared within your games.'
+                        ]
+                    },
+                    {
+                        title: '9. Your rights',
+                        items: [
+                            '9.1. Access: you can view your information from Settings.',
+                            '9.2. Modification: you can modify your nickname, avatar, and country at any time from the app. Nickname changes have a 14-day waiting period. To modify your name or surname, you can contact info@feel-in.app or delete your account and create a new one.',
+                            '9.3. Deletion: you can delete your account and all your data at any time. Deletion is permanent and irreversible.',
+                            '9.4. Notifications: you can control which notifications you receive from Settings.',
+                            '9.5. Personalized advertising: you can disable ad personalization from your device settings.'
+                        ]
+                    },
+                    {
+                        title: '10. Data retention',
+                        items: [
+                            '10.1. Profile data: retained while your account is active.',
+                            '10.2. Active games and chat messages: retained while the game is active. Games with enabled chat expire after 7 days of inactivity.',
+                            '10.3. Deleted games: retained for 30 days after deletion before permanent erasure.',
+                            '10.4. In-app notifications: automatically deleted after 3 days.',
+                            '10.5. Reports and support tickets: retained as long as necessary for platform management.',
+                            '10.6. Upon account deletion, all your personal data is erased immediately and permanently.'
+                        ]
+                    },
+                    {
+                        title: '11. Minors',
+                        items: [
+                            '11.1. Feel-In is not directed at persons under 18 and does not intentionally collect information from minors.',
+                            '11.2. If we become aware that a minor has created an account, we will delete it without prior notice.'
+                        ]
+                    },
+                    {
+                        title: '12. Cookies and tracking',
+                        items: [
+                            '12.1. Feel-In does not use cookies. It uses local device storage for session preferences.',
+                            '12.2. We use Firebase Analytics for aggregated anonymous metrics.',
+                            '12.3. Google AdMob may use device advertising identifiers (IDFA on iOS, GAID on Android) for ad personalization, subject to the user\u2019s device privacy settings.'
+                        ]
+                    },
+                    {
+                        title: '13. International transfer',
+                        items: [
+                            '13.1. Your information may be stored on servers outside your country of residence (Google Cloud). By using Feel-In, you consent to this transfer.',
+                            '13.2. Regardless of where your data is stored, Feel-In respects the rights afforded to you under data protection legislation in force in your country of residence.'
+                        ]
+                    },
+                    {
+                        title: '14. Changes to this policy',
+                        items: [
+                            '14.1. We may update this Policy periodically. Significant changes will be notified through the app.'
+                        ]
+                    },
+                    {
+                        title: '15. Contact',
+                        items: [
+                            'For privacy inquiries: info@feel-in.app'
+                        ]
+                    }
+                ]
+            },
+            pt: {
+                back: 'Voltar',
+                title: 'Privacy Policy',
+                updated: 'Last updated: April 2026',
+                intro: 'No Feel-In, valorizamos sua privacidade. Esta privacy policy descreve quais informa\u00e7\u00f5es coletamos, como as utilizamos, quais s\u00e3o seus direitos e a base legal para o tratamento dos seus dados.',
+                sections: [
+                    {
+                        title: '1. Informa\u00e7\u00f5es que coletamos',
+                        items: [
+                            '1.1. Informa\u00e7\u00f5es de registro: nome, sobrenome, apelido, email (do provedor de autentica\u00e7\u00e3o), data de nascimento, g\u00eanero, pa\u00eds, avatar selecionado.',
+                            '1.2. Informa\u00e7\u00f5es geradas pelo uso: respostas a perguntas, mensagens de chat, avalia\u00e7\u00f5es (gostei/n\u00e3o gostei), hist\u00f3rico de partidas, den\u00fancias de usu\u00e1rios, den\u00fancias de perguntas, tickets de suporte, transa\u00e7\u00f5es de Spark, prefer\u00eancias de notifica\u00e7\u00f5es, partidas ocultas.',
+                            '1.3. Informa\u00e7\u00f5es derivadas: etiquetas tem\u00e1ticas de interesse extra\u00eddas automaticamente de suas respostas aprovadas (veja se\u00e7\u00e3o 5).',
+                            '1.4. Informa\u00e7\u00f5es t\u00e9cnicas: identificador de dispositivo (para notifica\u00e7\u00f5es push), idioma do dispositivo, informa\u00e7\u00f5es de autentica\u00e7\u00e3o, dados de intera\u00e7\u00e3o com an\u00fancios publicit\u00e1rios (coletados pelo Google AdMob).'
+                        ]
+                    },
+                    {
+                        title: '2. Como utilizamos suas informa\u00e7\u00f5es',
+                        items: [
+                            '2.1. Para o funcionamento do app: criar sua conta, emparelh\u00e1-lo com outros usu\u00e1rios, exibir perguntas, moderar respostas, gerenciar Spark, enviar notifica\u00e7\u00f5es.',
+                            '2.2. Para melhorar o emparelhamento: as etiquetas tem\u00e1ticas de interesse s\u00e3o utilizadas como um fator adicional no sistema de emparelhamento para conect\u00e1-lo com usu\u00e1rios de interesses compat\u00edveis. Este processo \u00e9 completamente automatizado.',
+                            '2.3. Para melhorar o servi\u00e7o: an\u00e1lise agregada e an\u00f4nima, detec\u00e7\u00e3o de padr\u00f5es de abuso.'
+                        ]
+                    },
+                    {
+                        title: '3. Base legal do tratamento',
+                        items: [
+                            '3.1. Execu\u00e7\u00e3o contratual (Art. 7, V da LGPD): o tratamento de dados necess\u00e1rio para prestar o servi\u00e7o (registro, emparelhamento, modera\u00e7\u00e3o, gest\u00e3o de Spark).',
+                            '3.2. Interesse leg\u00edtimo (Art. 7, IX da LGPD): detec\u00e7\u00e3o de abuso, seguran\u00e7a da plataforma, melhorias do servi\u00e7o baseadas em an\u00e1lise agregada.',
+                            '3.3. Consentimento (Art. 7, I da LGPD): personaliza\u00e7\u00e3o de publicidade atrav\u00e9s de terceiros (voc\u00ea pode retirar este consentimento nas configura\u00e7\u00f5es do seu dispositivo).'
+                        ]
+                    },
+                    {
+                        title: '4. Informa\u00e7\u00f5es compartilhadas com outros usu\u00e1rios',
+                        items: [
+                            '4.1. A revela\u00e7\u00e3o das suas informa\u00e7\u00f5es \u00e9 progressiva e controlada:',
+                            { list: ['Ao emparelhar: apenas seu avatar.', 'Primeira Vibra\u00e7\u00e3o: seu nome.', 'Segunda Vibra\u00e7\u00e3o: seu pa\u00eds.', 'Terceira Vibra\u00e7\u00e3o: sua idade (calculada, n\u00e3o sua data exata).', 'Ao habilitar chat: seu apelido.'] },
+                            '4.2. Nunca s\u00e3o compartilhados com outros usu\u00e1rios: seu sobrenome, email, data de nascimento exata ou g\u00eanero.',
+                            '4.3. As informa\u00e7\u00f5es reveladas s\u00e3o congeladas no momento da revela\u00e7\u00e3o. Se voc\u00ea modificar seu perfil posteriormente, as informa\u00e7\u00f5es j\u00e1 reveladas em partidas existentes n\u00e3o s\u00e3o atualizadas.',
+                            '4.4. No chat livre, voc\u00ea decide quais informa\u00e7\u00f5es adicionais compartilhar.'
+                        ]
+                    },
+                    {
+                        title: '5. Modera\u00e7\u00e3o por intelig\u00eancia artificial',
+                        items: [
+                            '5.1. As respostas s\u00e3o processadas por um sistema de intelig\u00eancia artificial fornecido pelo Google (Gemini) exclusivamente para verificar o cumprimento das regras da comunidade.',
+                            '5.2. Como parte deste processo, o sistema pode extrair entre 0 e 3 etiquetas tem\u00e1ticas an\u00f4nimas por resposta aprovada (sempre em ingl\u00eas). Essas etiquetas refletem temas gerais (ex: \u201cviagens\u201d, \u201cm\u00fasica\u201d, \u201cfilosofia\u201d) e s\u00e3o armazenadas como frequ\u00eancias acumuladas no seu perfil para melhorar a qualidade do emparelhamento. As etiquetas n\u00e3o s\u00e3o compartilhadas com outros usu\u00e1rios e n\u00e3o s\u00e3o vis\u00edveis no app.',
+                            '5.3. A IA n\u00e3o armazena, aprende nem utiliza suas respostas para treinar modelos. Os dados s\u00e3o processados em tempo real e n\u00e3o s\u00e3o retidos nos sistemas do Google al\u00e9m do processamento imediato.',
+                            '5.4. A IA n\u00e3o modifica suas respostas. Apenas as aprova ou bloqueia.'
+                        ]
+                    },
+                    {
+                        title: '6. Jogadores automatizados',
+                        items: [
+                            '6.1. Algumas partidas podem incluir jogadores automatizados (bots) cujas respostas s\u00e3o geradas por intelig\u00eancia artificial. Esses jogadores s\u00e3o utilizados exclusivamente para melhorar a experi\u00eancia de boas-vindas e evitar tempos de espera prolongados (veja Termos e Condi\u00e7\u00f5es, se\u00e7\u00e3o 10).',
+                            '6.2. Os perfis dos jogadores automatizados n\u00e3o correspondem a pessoas reais. As informa\u00e7\u00f5es associadas a esses perfis s\u00e3o fict\u00edcias.'
+                        ]
+                    },
+                    {
+                        title: '7. Servi\u00e7os de terceiros',
+                        items: [
+                            'O Feel-In utiliza os seguintes servi\u00e7os de terceiros que podem tratar seus dados:',
+                            '7.1. Firebase (Google Cloud Platform): armazenamento de dados, autentica\u00e7\u00e3o, fun\u00e7\u00f5es de servidor, mensagens push.',
+                            '7.2. Google Gemini: modera\u00e7\u00e3o de respostas e extra\u00e7\u00e3o de etiquetas tem\u00e1ticas.',
+                            '7.3. Google AdMob: exibi\u00e7\u00e3o de an\u00fancios publicit\u00e1rios. O AdMob pode coletar identificadores de dispositivo, dados de intera\u00e7\u00e3o com an\u00fancios e outras informa\u00e7\u00f5es t\u00e9cnicas para personaliza\u00e7\u00e3o publicit\u00e1ria. Voc\u00ea pode gerenciar suas prefer\u00eancias de publicidade personalizada nas configura\u00e7\u00f5es do seu dispositivo.',
+                            '7.4. RevenueCat: processamento de compras dentro do aplicativo. A RevenueCat recebe informa\u00e7\u00f5es de transa\u00e7\u00f5es e dados da plataforma de pagamento (Apple/Google) necess\u00e1rios para gerenciar as compras.',
+                            'Cada servi\u00e7o de terceiros opera sob sua pr\u00f3pria privacy policy.'
+                        ]
+                    },
+                    {
+                        title: '8. Armazenamento e seguran\u00e7a',
+                        items: [
+                            '8.1. Suas informa\u00e7\u00f5es s\u00e3o armazenadas em servidores do Firebase (Google Cloud Platform).',
+                            '8.2. As senhas n\u00e3o s\u00e3o armazenadas, pois a autentica\u00e7\u00e3o \u00e9 delegada ao Google e Apple.',
+                            '8.3. As regras de seguran\u00e7a garantem que voc\u00ea s\u00f3 pode acessar suas pr\u00f3prias informa\u00e7\u00f5es e as informa\u00e7\u00f5es compartilhadas dentro das suas partidas.'
+                        ]
+                    },
+                    {
+                        title: '9. Seus direitos',
+                        items: [
+                            '9.1. Acesso: voc\u00ea pode visualizar suas informa\u00e7\u00f5es em Configura\u00e7\u00f5es.',
+                            '9.2. Modifica\u00e7\u00e3o: voc\u00ea pode modificar seu apelido, avatar e pa\u00eds a qualquer momento no app. A altera\u00e7\u00e3o de apelido tem um per\u00edodo de espera de 14 dias. Para modificar seu nome ou sobrenome, voc\u00ea pode entrar em contato com info@feel-in.app ou eliminar sua conta e criar uma nova.',
+                            '9.3. Elimina\u00e7\u00e3o: voc\u00ea pode eliminar sua conta e todos os seus dados a qualquer momento. A elimina\u00e7\u00e3o \u00e9 permanente e irrevers\u00edvel.',
+                            '9.4. Notifica\u00e7\u00f5es: voc\u00ea pode controlar quais notifica\u00e7\u00f5es recebe em Configura\u00e7\u00f5es.',
+                            '9.5. Publicidade personalizada: voc\u00ea pode desativar a personaliza\u00e7\u00e3o de an\u00fancios nas configura\u00e7\u00f5es do seu dispositivo.'
+                        ]
+                    },
+                    {
+                        title: '10. Reten\u00e7\u00e3o de dados',
+                        items: [
+                            '10.1. Dados de perfil: conservados enquanto sua conta estiver ativa.',
+                            '10.2. Partidas ativas e mensagens de chat: conservados enquanto a partida estiver ativa. As partidas com chat habilitado expiram ap\u00f3s 7 dias de inatividade.',
+                            '10.3. Partidas eliminadas: retidas por 30 dias ap\u00f3s a elimina\u00e7\u00e3o antes da exclus\u00e3o permanente.',
+                            '10.4. Notifica\u00e7\u00f5es no app: eliminadas automaticamente ap\u00f3s 3 dias.',
+                            '10.5. Den\u00fancias e tickets de suporte: conservados enquanto forem necess\u00e1rios para a gest\u00e3o da plataforma.',
+                            '10.6. Ao eliminar sua conta, todos os seus dados pessoais s\u00e3o apagados de forma imediata e permanente.'
+                        ]
+                    },
+                    {
+                        title: '11. Informa\u00e7\u00f5es de menores',
+                        items: [
+                            '11.1. O Feel-In n\u00e3o \u00e9 direcionado a menores de 18 anos e n\u00e3o coleta intencionalmente informa\u00e7\u00f5es de menores.',
+                            '11.2. Se tomarmos conhecimento de que um menor criou uma conta, a eliminaremos sem aviso pr\u00e9vio.'
+                        ]
+                    },
+                    {
+                        title: '12. Cookies e rastreamento',
+                        items: [
+                            '12.1. O Feel-In n\u00e3o utiliza cookies. Utiliza armazenamento local do dispositivo para prefer\u00eancias de sess\u00e3o.',
+                            '12.2. Utilizamos o Firebase Analytics para m\u00e9tricas agregadas an\u00f4nimas.',
+                            '12.3. O Google AdMob pode utilizar identificadores publicit\u00e1rios do dispositivo (IDFA no iOS, GAID no Android) para personaliza\u00e7\u00e3o de an\u00fancios, sujeito \u00e0s configura\u00e7\u00f5es de privacidade do dispositivo do usu\u00e1rio.'
+                        ]
+                    },
+                    {
+                        title: '13. Transfer\u00eancia internacional',
+                        items: [
+                            '13.1. Suas informa\u00e7\u00f5es podem ser armazenadas em servidores fora do seu pa\u00eds de resid\u00eancia (Google Cloud). Ao usar o Feel-In, voc\u00ea consente com esta transfer\u00eancia.',
+                            '13.2. Independentemente de onde seus dados sejam armazenados, o Feel-In respeita os direitos que lhe correspondem sob a legisla\u00e7\u00e3o de prote\u00e7\u00e3o de dados vigente em seu pa\u00eds de resid\u00eancia, incluindo a Lei Geral de Prote\u00e7\u00e3o de Dados (LGPD).'
+                        ]
+                    },
+                    {
+                        title: '14. Mudan\u00e7as nesta privacy policy',
+                        items: [
+                            '14.1. Podemos atualizar esta Privacy Policy periodicamente. As mudan\u00e7as significativas ser\u00e3o notificadas atrav\u00e9s do app.'
+                        ]
+                    },
+                    {
+                        title: '15. Contato',
+                        items: [
+                            'Para consultas sobre privacidade: info@feel-in.app'
+                        ]
+                    }
+                ]
+            }
+        };
+
+        var currentLang = 'es';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            document.getElementById('lang-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+            document.getElementById('lang-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+            document.getElementById('lang-pt').className = 'lang-btn' + (lang === 'pt' ? ' active' : '');
+
+            var t = content[lang];
+            document.getElementById('back-text').textContent = t.back;
+            document.getElementById('page-title').textContent = t.title;
+            document.getElementById('last-updated').textContent = t.updated;
+            document.getElementById('intro').textContent = t.intro;
+
+            var html = '';
+            for (var i = 0; i < t.sections.length; i++) {
+                var s = t.sections[i];
+                html += '<div class="section"><h2 class="section-title">' + s.title + '</h2>';
+                for (var j = 0; j < s.items.length; j++) {
+                    var item = s.items[j];
+                    if (typeof item === 'string') {
+                        html += '<p>' + item + '</p>';
+                    } else if (item.list) {
+                        html += '<ul>';
+                        for (var k = 0; k < item.list.length; k++) {
+                            html += '<li>' + item.list[k] + '</li>';
+                        }
+                        html += '</ul>';
+                    }
+                }
+                html += '</div>';
+            }
+            document.getElementById('sections').innerHTML = html;
+        }
+
+        // Auto-detect language
+        (function() {
+            var browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+            var lang;
+            if (browserLang.startsWith('pt')) {
+                lang = 'pt';
+            } else if (browserLang.startsWith('es')) {
+                lang = 'es';
+            } else {
+                lang = 'en';
+            }
+            setLang(lang);
+        })();
+    </script>
+</body>
+</html>
