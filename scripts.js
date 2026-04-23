@@ -7,6 +7,15 @@
 (function () {
   'use strict';
 
+  // ── Icon font loading (prevents FOUT of ligature text) ──
+  if ('fonts' in document) {
+    document.fonts.load('24px "Material Symbols Outlined"').then(function () {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  } else {
+    document.documentElement.classList.add('fonts-loaded');
+  }
+
   // ── Google Form (Newsletter) ──────────────────
   var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc-xzNRt7bP_nGp0hbdlHUfISjfk9a9VUA5fCYo4PmVNf_9YA/formResponse';
   var ENTRY_ID = 'entry.1074143854';

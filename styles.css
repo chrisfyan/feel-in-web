@@ -105,7 +105,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   font-size: 20px;
   line-height: 1;
   user-select: none;
+  visibility: hidden;
 }
+.fonts-loaded .material-symbols-outlined { visibility: visible; }
 
 /* ── Skip link ── */
 .skip-link {
