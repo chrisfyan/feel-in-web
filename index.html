@@ -1,681 +1,328 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feel-In — Conectá desde lo que sentís</title>
-    <meta name="description" content="Feel-In es la app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.">
-    <meta name="theme-color" content="#0D0B1A">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0D0B1A">
+  <meta name="color-scheme" content="dark">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Feel-In — Conectá desde lo que sentís">
-    <meta property="og:description" content="Conexiones reales nacen de respuestas reales. Descargá Feel-In.">
-    <meta property="og:image" content="https://feel-in.app/og-image.png">
-    <meta property="og:url" content="https://feel-in.app">
-    <meta property="og:type" content="website">
+  <title>Feel-In — Más allá de las apariencias</title>
+  <meta name="description" content="La app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Feel-In — Conectá desde lo que sentís">
-    <meta name="twitter:description" content="Conexiones reales nacen de respuestas reales.">
-    <meta name="twitter:image" content="https://feel-in.app/og-image.png">
+  <!-- Canonical + alternates -->
+  <link rel="canonical" href="https://feel-in.app/">
+  <link rel="alternate" hreflang="es" href="https://feel-in.app/">
+  <link rel="alternate" hreflang="en" href="https://feel-in.app/">
+  <link rel="alternate" hreflang="pt-BR" href="https://feel-in.app/">
+  <link rel="alternate" hreflang="x-default" href="https://feel-in.app/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Feel-In">
+  <meta property="og:title" content="Feel-In — Más allá de las apariencias">
+  <meta property="og:description" content="La app donde las conexiones nacen de lo que pensás y sentís.">
+  <meta property="og:url" content="https://feel-in.app/">
+  <meta property="og:image" content="https://feel-in.app/assets/logo-stars.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Feel-In logo">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Feel-In — Más allá de las apariencias">
+  <meta name="twitter:description" content="La app donde las conexiones nacen de lo que pensás y sentís.">
+  <meta name="twitter:image" content="https://feel-in.app/assets/logo-stars.png">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
 
-        body {
-            background: #0D0B1A;
-            color: #F0EDF6;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            min-height: 100dvh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,200..700,0..1,-50..200">
 
-        /* ── Centered logo ── */
-        .bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0D0B1A;
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
 
-        .bg img {
-            max-width: min(380px, 70vw);
-            height: auto;
-            animation: logoFade 1.2s ease-out;
-        }
+  <!-- Preload hero logo -->
+  <link rel="preload" as="image" href="assets/logo-stars.png" fetchpriority="high">
 
-        @keyframes logoFade {
-            from { opacity: 0; transform: scale(0.92); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* ── Top content ── */
-        .top {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 4.5rem 2rem 0;
-            animation: fadeDown 1s ease-out;
-        }
-
-        @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .description {
-            font-size: 1.05rem;
-            font-weight: 400;
-            line-height: 1.65;
-            color: #B8A9D4;
-            text-align: center;
-            max-width: 520px;
-            letter-spacing: 0.2px;
-            text-shadow: 0 2px 20px rgba(13, 11, 26, 0.8);
-            padding-top: 40px;
-        }
-
-        /* ── Bottom content ── */
-        .bottom {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 2rem 2.5rem;
-            animation: fadeUp 1s ease-out;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── Store buttons ── */
-        .stores {
-            display: flex;
-            gap: 0.7rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        .store-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.65rem 1.5rem;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #F0EDF6;
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            cursor: pointer;
-        }
-
-        .store-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(184, 169, 212, 0.35);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(107, 91, 149, 0.15);
-        }
-
-        .store-btn:active {
-            transform: translateY(0);
-        }
-
-        .store-btn svg {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            opacity: 0.85;
-        }
-
-        /* ── Subscribe button ── */
-        .subscribe-btn {
-            padding: 0.5rem 1.3rem;
-            border-radius: 50px;
-            background: rgba(196, 169, 98, 0.12);
-            border: 1px solid rgba(196, 169, 98, 0.25);
-            color: #C4A962;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            margin-bottom: 1.6rem;
-        }
-
-        .subscribe-btn:hover {
-            background: rgba(196, 169, 98, 0.2);
-            border-color: rgba(196, 169, 98, 0.4);
-            transform: translateY(-1px);
-        }
-
-        /* ── Email ── */
-        .email {
-            font-size: 0.82rem;
-            font-weight: 400;
-            letter-spacing: 0.4px;
-        }
-
-        .email a {
-            color: #B8A9D4;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .email a:hover {
-            color: #F0EDF6;
-        }
-
-        /* ── Language toggle ── */
-        .lang-toggle {
-            position: fixed;
-            top: 1.2rem;
-            right: 1.2rem;
-            z-index: 3;
-            display: flex;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            animation: fadeDown 1s ease-out;
-        }
-
-        .lang-btn {
-            padding: 0.35rem 0.65rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: transparent;
-            color: #6B6380;
-        }
-
-        .lang-btn.active {
-            background: rgba(255, 255, 255, 0.1);
-            color: #F0EDF6;
-        }
-
-        .lang-btn:hover:not(.active) {
-            color: #9B93B0;
-        }
-
-        /* ── Modal overlay ── */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 11, 26, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            z-index: 10;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.25s ease-out;
-        }
-
-        .modal-overlay.visible {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal {
-            background: linear-gradient(145deg, #1E1A2D, #161320);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 400px;
-            width: calc(100% - 3rem);
-            position: relative;
-            animation: modalSlide 0.3s ease-out;
-        }
-
-        @keyframes modalSlide {
-            from { opacity: 0; transform: translateY(20px) scale(0.97); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: #6B6380;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #F0EDF6;
-        }
-
-        .modal-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #F0EDF6;
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-subtitle {
-            font-size: 0.8rem;
-            font-weight: 300;
-            color: #9B93B0;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .input-row {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .email-input {
-            flex: 1;
-            padding: 0.7rem 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: #F0EDF6;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 400;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .email-input::placeholder {
-            color: #6B6380;
-        }
-
-        .email-input:focus {
-            border-color: rgba(107, 91, 149, 0.5);
-        }
-
-        .email-input.error {
-            border-color: rgba(232, 93, 117, 0.6);
-        }
-
-        .submit-btn {
-            padding: 0.7rem 1.2rem;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #6B5B95, #8B7BB5);
-            color: #F0EDF6;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-
-        .submit-btn:hover {
-            box-shadow: 0 4px 20px rgba(107, 91, 149, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-msg {
-            font-size: 0.75rem;
-            margin-top: 0.8rem;
-            min-height: 1.1em;
-            text-align: center;
-        }
-
-        .form-msg.success {
-            color: #6BCB77;
-        }
-
-        .form-msg.error {
-            color: #E85D75;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 480px) {
-            .top {
-                padding: 4rem 1.5rem 0;
-            }
-            .description {
-                font-size: 0.92rem;
-            }
-            .bottom {
-                padding: 0 1.5rem 2rem;
-            }
-            .input-row {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-aspect-ratio: 3/4) {
-            .top {
-                padding-top: 3.5rem;
-            }
-        }
-
-        @media (max-height: 700px) {
-            .top {
-                padding-top: 3rem;
-            }
-            .description {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Feel-In",
+    "description": "The app where connections are born from what you think and feel. Anonymous Q&A with progressive identity reveal.",
+    "url": "https://feel-in.app/",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "iOS, Android",
+    "inLanguage": ["es", "en", "pt-BR"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Feel-In",
+      "email": "info@feel-in.app",
+      "url": "https://feel-in.app/"
+    }
+  }
+  </script>
 </head>
 <body>
 
-    <div class="bg">
-        <img src="logo-center.png" alt="Feel-In">
+  <a href="#main" class="skip-link" data-i18n="navSkip">Saltar al contenido</a>
+
+  <!-- Atmospheric background -->
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere__blob atmosphere__blob--1"></div>
+    <div class="atmosphere__blob atmosphere__blob--2"></div>
+    <div class="atmosphere__blob atmosphere__blob--3"></div>
+  </div>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="brand" href="#" aria-label="Feel-In">
+        <img class="brand__word" src="assets/logo-word.png" alt="Feel-in" height="32">
+      </a>
+
+      <nav class="lang" role="group" aria-label="Language">
+        <button class="lang__btn" data-lang="es" aria-pressed="true" aria-label="Español">ES</button>
+        <button class="lang__btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        <button class="lang__btn" data-lang="pt" aria-pressed="false" aria-label="Português">PT</button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Language toggle -->
-    <div class="lang-toggle">
-        <button class="lang-btn active" id="lang-es" onclick="setLang('es')">ES</button>
-        <button class="lang-btn" id="lang-en" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" id="lang-pt" onclick="setLang('pt')">PT</button>
-    </div>
+  <main id="main">
 
-    <!-- Description at the top -->
-    <div class="top">
-        <p class="description" id="description"></p>
-    </div>
-
-    <!-- Buttons + subscribe + email at the bottom -->
-    <div class="bottom">
-        <div class="stores">
-            <a class="store-btn" id="btn-ios" onclick="openModal('store')" role="button">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                App Store
-            </a>
-
-            <a class="store-btn" id="btn-android" onclick="openModal('store')" role="button">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3.18 23.67c-.35-.2-.55-.58-.55-1.06V1.39c0-.48.2-.86.55-1.06l11.07 11.67L3.18 23.67zm14.83-8.43L5.42 22.5l10.14-10.7 2.45 3.44zm1.31-1.38L16.77 12l2.55-1.86 2.55 1.41c.67.37.67.97 0 1.34l-2.55 1.37zM5.42 1.5l12.59 7.26-2.45 2.58L5.42 1.5z"/>
-                </svg>
-                Google Play
-            </a>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__logo-wrap">
+          <div class="hero__halo" aria-hidden="true"></div>
+          <img class="hero__logo" src="assets/logo-stars.png" alt="Feel-In" width="680" height="680" fetchpriority="high">
         </div>
 
-        <button class="subscribe-btn" id="subscribe-btn" onclick="openModal('subscribe')">
-            <span id="subscribe-label"></span>
-        </button>
+        <h1 class="hero__h1">
+          <span data-i18n="heroH1Light">Más allá</span>
+          <em data-i18n="heroH1Bold">de las apariencias</em>
+        </h1>
 
-        <div class="email">
-            <a href="mailto:info@feel-in.app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;opacity:0.7"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>info@feel-in.app</a>
+        <p class="hero__sub" data-i18n="heroSub">
+          Respondes preguntas, evalúas las respuestas de tu conexión y, cuantas más coincidencias, más cerca de conocerse.
+        </p>
+
+        <div class="hero__cta-row">
+          <button class="btn btn--primary" data-open-modal="subscribe">
+            <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+            <span data-i18n="heroCtaPrimary">Suscribite a las novedades</span>
+          </button>
         </div>
-    </div>
 
-    <!-- Subscribe modal -->
-    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <p class="modal-title" id="modal-title"></p>
-            <p class="modal-subtitle" id="modal-subtitle"></p>
-            <div class="input-row">
-                <input type="email" class="email-input" id="email-input" placeholder="email@example.com" autocomplete="email">
-                <button class="submit-btn" id="submit-btn" onclick="submitEmail()"></button>
+        <div class="hero__stores" id="stores-row">
+          <button class="btn btn--secondary store-btn" id="btn-ios" data-open-modal="store" aria-label="App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span class="store-btn__meta">
+              <span data-i18n="storeIosLine1">App Store</span>
+            </span>
+          </button>
+
+          <button class="btn btn--secondary store-btn" id="btn-android" data-open-modal="store" aria-label="Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.18 23.67c-.35-.2-.55-.58-.55-1.06V1.39c0-.48.2-.86.55-1.06l11.07 11.67L3.18 23.67zm14.83-8.43L5.42 22.5l10.14-10.7 2.45 3.44zm1.31-1.38L16.77 12l2.55-1.86 2.55 1.41c.67.37.67.97 0 1.34l-2.55 1.37zM5.42 1.5l12.59 7.26-2.45 2.58L5.42 1.5z"/>
+            </svg>
+            <span class="store-btn__meta">
+              <span data-i18n="storeAndroidLine1">Google Play</span>
+            </span>
+          </button>
+        </div>
+
+        <div class="hero__scroll-hint" aria-hidden="true">
+          <span data-i18n="scrollHint">Seguí bajando</span>
+          <span class="material-symbols-outlined">keyboard_arrow_down</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section class="section" id="what">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">
+            <span class="light" data-i18n="s1TitleLight">Conexiones que</span>
+            <span class="bold" data-i18n="s1TitleBold">no empiezan por la cara</span>
+          </h2>
+          <p class="section__sub" data-i18n="s1Sub" hidden></p>
+        </header>
+
+        <div class="pillars">
+          <article class="pillar reveal pillar--center">
+            <div class="pillar__icon"><span class="material-symbols-outlined">visibility_off</span></div>
+            <h3 class="pillar__title" data-i18n="p1Title">Sin fotos</h3>
+            <p class="pillar__copy" data-i18n="p1Copy">Nada de swipes. Solo palabras.</p>
+          </article>
+
+          <article class="pillar pillar--gold reveal pillar--center">
+            <div class="pillar__icon"><span class="material-symbols-outlined">forum</span></div>
+            <h3 class="pillar__title" data-i18n="p2Title">Preguntas reales</h3>
+            <p class="pillar__copy" data-i18n="p2Copy">Siete categorías, de lo tranquilo a lo profundo. Vos elegís qué tan lejos ir.</p>
+          </article>
+
+          <article class="pillar pillar--ember reveal pillar--center">
+            <div class="pillar__icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+            <h3 class="pillar__title" data-i18n="p3Title">Revelación progresiva</h3>
+            <p class="pillar__copy" data-i18n="p3Copy">La identidad se revela de a poco, a medida que sus palabras conectan. El chat se abre cuando ambos están listos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">
+            <span class="light" data-i18n="s2TitleLight">Cómo</span>
+            <span class="bold" data-i18n="s2TitleBold">funciona</span>
+          </h2>
+          <p class="section__sub" data-i18n="s2Sub">Sin presión, sin scroll infinito.</p>
+        </header>
+
+        <div class="flow">
+          <div class="step reveal">
+            <div class="step__num">01</div>
+            <h3 class="step__title" data-i18n="step1Title">Pregunta</h3>
+            <p class="step__copy" data-i18n="step1Copy">Se te presenta una pregunta.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">02</div>
+            <h3 class="step__title" data-i18n="step2Title">Respondés</h3>
+            <p class="step__copy" data-i18n="step2Copy">Escribís lo que pensás, en tus palabras.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">03</div>
+            <h3 class="step__title" data-i18n="step3Title">Vibra</h3>
+            <p class="step__copy" data-i18n="step3Copy">Si resuena con alguien, se forma una Vibra.</p>
+          </div>
+          <div class="step step--final reveal">
+            <div class="step__num">04</div>
+            <h3 class="step__title" data-i18n="step4Title">Chat</h3>
+            <p class="step__copy" data-i18n="step4Copy">Cuando ambos están listos, desbloquean el chat.</p>
+          </div>
+        </div>
+
+        <div class="flow-preview">
+          <div class="qcard reveal">
+            <div class="qcard__chip">
+              <span class="material-symbols-outlined">person_outline</span>
+              <span data-i18n="previewChip">Identidad</span>
             </div>
-            <p class="form-msg" id="form-msg"></p>
+            <p class="qcard__q" data-i18n="previewQ">¿Qué lugar te hace sentir en casa, incluso cuando no lo es?</p>
+            <div class="qcard__answer" data-i18n="previewAnswer">"Un café en domingo de lluvia, cuando nadie espera nada de mí."</div>
+            <div class="qcard__hearts" aria-label="4 Vibras">
+              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">favorite</span>
+            </div>
+          </div>
+
+          <div class="preview-note reveal">
+            <h3>
+              <span class="light" data-i18n="previewNoteTitleLight">Una pregunta a la vez,</span>
+              <span class="bold" data-i18n="previewNoteTitleBold"> sin apuro</span>
+            </h3>
+            <p data-i18n="previewNoteCopy">Cada categoría tiene su atmósfera y su ritmo. Podés responder ahora, mañana o la semana que viene.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="section newsletter" id="newsletter">
+      <div class="container">
+        <div class="newsletter__inner reveal">
+          <h2 class="newsletter__title">
+            <span class="light" data-i18n="nlTitleLight">Quedate</span>
+            <span class="bold" data-i18n="nlTitleBold">cerca</span>
+          </h2>
+          <p class="newsletter__sub" data-i18n="nlSub">
+            Te contamos antes que a nadie cuándo abrimos las puertas. Un email por noticia real.
+          </p>
+          <button class="btn btn--primary newsletter__btn" data-open-modal="subscribe">
+            <span data-i18n="nlCta">Suscribite a las novedades</span>
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </button>
+          <span class="newsletter__fine" data-i18n="nlFine">Sin spam. Podés darte de baja cuando quieras.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo-word.png" alt="Feel-in" height="26" loading="lazy">
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="mailto:info@feel-in.app">
+          <span class="material-symbols-outlined">mail</span>
+          <span data-i18n="footerContact">Contacto</span>
+        </a>
+        <a href="privacy.html">
+          <span class="material-symbols-outlined">shield</span>
+          <span data-i18n="footerPrivacy">Privacidad</span>
+        </a>
+      </nav>
+      <div class="footer__copy">
+        <span data-i18n="footerCopy">© 2026 Feel-In · Hecho con intención</span>
+        <span>info@feel-in.app</span>
+      </div>
     </div>
+  </footer>
 
-    <script>
-        // ── Google Form config ──
-        var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc-xzNRt7bP_nGp0hbdlHUfISjfk9a9VUA5fCYo4PmVNf_9YA/formResponse';
-        var ENTRY_ID = 'entry.1074143854';
+  <!-- Modal (Newsletter / Store) -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal" style="padding: 56px 32px 32px;">
+      <div class="modal__icon" aria-hidden="true">
+        <span class="material-symbols-outlined">mail</span>
+      </div>
+      <button class="modal__close" id="modal-close" data-i18n-attr="aria-label:modalClose" aria-label="Cerrar">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <h2 class="modal__title" id="modal-title">Quedate cerca</h2>
+      <p class="modal__sub" id="modal-subtitle">Te contamos antes que a nadie lo que se viene.</p>
+      <div class="modal__form">
+        <input type="email"
+               id="modal-input"
+               class="modal__input"
+               autocomplete="email"
+               inputmode="email"
+               data-i18n-attr="placeholder:modalPlaceholder"
+               placeholder="tu@email.com"
+               aria-label="Email">
+        <button class="modal__submit" id="modal-submit" data-i18n="modalSubmit">Suscribirme</button>
+      </div>
+      <p class="modal__msg" id="modal-msg" aria-live="polite"></p>
+    </div>
+  </div>
 
-        // ── i18n ──
-        var i18n = {
-            es: {
-                title: 'Feel-In — Conectá desde lo que sentís',
-                metaDesc: 'Feel-In es la app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.',
-                description: 'La app donde las conexiones nacen de lo que pensás y sentís. Respondé preguntas profundas, descubrí quién vibra como vos.',
-                subscribeLabel: 'Suscribirse al newsletter',
-                modalTitleStore: 'Ya falta poco',
-                modalSubtitleStore: 'Dejá tu email y te avisamos cuando puedas descargarla.',
-                modalTitleSubscribe: 'Quedate cerca',
-                modalSubtitleSubscribe: 'Te contamos antes que a nadie lo que se viene.',
-                submitBtn: 'Suscribir',
-                submitting: 'Enviando...',
-                successMsg: '¡Listo! Te avisamos cuando haya novedades.',
-                errorEmail: 'Ingresá un email válido.',
-                errorGeneric: 'Hubo un error. Intentá de nuevo.'
-            },
-            en: {
-                title: 'Feel-In — Connect from what you feel',
-                metaDesc: 'Feel-In is the app where connections are born from what you think and feel. Answer deep questions, discover who vibes like you.',
-                description: 'The app where connections are born from what you think and feel. Answer deep questions, discover who vibes like you.',
-                subscribeLabel: 'Subscribe to newsletter',
-                modalTitleStore: 'Almost there',
-                modalSubtitleStore: 'Leave your email and we\u0027ll let you know when you can download it.',
-                modalTitleSubscribe: 'Stay close',
-                modalSubtitleSubscribe: 'Be the first to hear about what\u0027s coming.',
-                submitBtn: 'Subscribe',
-                submitting: 'Sending...',
-                successMsg: "You're in! We'll notify you when there's news.",
-                errorEmail: 'Enter a valid email.',
-                errorGeneric: 'Something went wrong. Try again.'
-            },
-            pt: {
-                title: 'Feel-In — Conecte-se a partir do que você sente',
-                metaDesc: 'Feel-In é o app onde as conexões nascem do que você pensa e sente. Responda perguntas profundas, descubra quem vibra como você.',
-                description: 'O app onde as conexões nascem do que você pensa e sente. Responda perguntas profundas, descubra quem vibra como você.',
-                subscribeLabel: 'Inscreva-se na newsletter',
-                modalTitleStore: 'Falta pouco',
-                modalSubtitleStore: 'Deixe seu email e avisamos quando puder baixar.',
-                modalTitleSubscribe: 'Fique por perto',
-                modalSubtitleSubscribe: 'Saiba antes de todo mundo o que está por vir.',
-                submitBtn: 'Inscrever-se',
-                submitting: 'Enviando...',
-                successMsg: 'Pronto! Avisaremos quando houver novidades.',
-                errorEmail: 'Insira um email válido.',
-                errorGeneric: 'Ocorreu um erro. Tente novamente.'
-            }
-        };
-
-        var currentLang = 'es';
-        var currentModalType = 'subscribe';
-
-        function setLang(lang) {
-            currentLang = lang;
-            var t = i18n[lang];
-
-            document.title = t.title;
-            document.querySelector('meta[name="description"]').setAttribute('content', t.metaDesc);
-            document.getElementById('description').textContent = t.description;
-            document.getElementById('subscribe-label').textContent = t.subscribeLabel;
-            document.documentElement.lang = lang;
-
-            document.getElementById('lang-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
-            document.getElementById('lang-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
-            document.getElementById('lang-pt').className = 'lang-btn' + (lang === 'pt' ? ' active' : '');
-
-            updateModalText();
-        }
-
-        function updateModalText() {
-            var t = i18n[currentLang];
-            if (currentModalType === 'store') {
-                document.getElementById('modal-title').textContent = t.modalTitleStore;
-                document.getElementById('modal-subtitle').textContent = t.modalSubtitleStore;
-            } else {
-                document.getElementById('modal-title').textContent = t.modalTitleSubscribe;
-                document.getElementById('modal-subtitle').textContent = t.modalSubtitleSubscribe;
-            }
-            document.getElementById('submit-btn').textContent = t.submitBtn;
-        }
-
-        function openModal(type) {
-            currentModalType = type;
-            updateModalText();
-            document.getElementById('email-input').value = '';
-            document.getElementById('email-input').className = 'email-input';
-            document.getElementById('form-msg').textContent = '';
-            document.getElementById('form-msg').className = 'form-msg';
-            document.getElementById('submit-btn').disabled = false;
-            document.getElementById('modal-overlay').className = 'modal-overlay visible';
-            setTimeout(function() {
-                document.getElementById('email-input').focus();
-            }, 100);
-        }
-
-        function closeModal() {
-            document.getElementById('modal-overlay').className = 'modal-overlay';
-        }
-
-        function closeModalOutside(e) {
-            if (e.target === document.getElementById('modal-overlay')) {
-                closeModal();
-            }
-        }
-
-        function submitEmail() {
-            var t = i18n[currentLang];
-            var input = document.getElementById('email-input');
-            var msg = document.getElementById('form-msg');
-            var btn = document.getElementById('submit-btn');
-            var email = input.value.trim();
-
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email || !emailRegex.test(email)) {
-                input.className = 'email-input error';
-                msg.textContent = t.errorEmail;
-                msg.className = 'form-msg error';
-                return;
-            }
-
-            input.className = 'email-input';
-            btn.disabled = true;
-            btn.textContent = t.submitting;
-            msg.textContent = '';
-
-            var iframe = document.createElement('iframe');
-            iframe.name = 'hidden_iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-
-            var form = document.createElement('form');
-            form.method = 'POST';
-            form.action = FORM_URL;
-            form.target = 'hidden_iframe';
-            form.style.display = 'none';
-
-            var field = document.createElement('input');
-            field.type = 'hidden';
-            field.name = ENTRY_ID;
-            field.value = email;
-            form.appendChild(field);
-
-            document.body.appendChild(form);
-            form.submit();
-
-            setTimeout(function() {
-                msg.textContent = t.successMsg;
-                msg.className = 'form-msg success';
-                btn.textContent = t.submitBtn;
-                btn.disabled = false;
-                input.value = '';
-
-                document.body.removeChild(form);
-                document.body.removeChild(iframe);
-
-                setTimeout(closeModal, 2500);
-            }, 1000);
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && document.getElementById('modal-overlay').classList.contains('visible')) {
-                submitEmail();
-            }
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Auto-detect language
-        (function() {
-            var browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
-            var lang;
-            if (browserLang.startsWith('pt')) {
-                lang = 'pt';
-            } else if (browserLang.startsWith('es')) {
-                lang = 'es';
-            } else {
-                lang = 'en';
-            }
-            setLang(lang);
-        })();
-    </script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
