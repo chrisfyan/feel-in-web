@@ -400,10 +400,9 @@ section { position: relative; }
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--s-3);
-  margin-bottom: var(--s-5);
 }
 .js-animate .hero__cta-row {
-  animation: fadeUp 1s var(--ease-out) 0.7s both;
+  animation: fadeUp 1s var(--ease-out) 0.85s both;
 }
 
 .hero__stores {
@@ -411,9 +410,10 @@ section { position: relative; }
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--s-3);
+  margin-bottom: var(--s-5);
 }
 .js-animate .hero__stores {
-  animation: fadeUp 1s var(--ease-out) 0.85s both;
+  animation: fadeUp 1s var(--ease-out) 0.7s both;
 }
 
 @keyframes fadeUp {
