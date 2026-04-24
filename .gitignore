@@ -1,0 +1,6 @@
+# Claude Code worktrees & local state
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
