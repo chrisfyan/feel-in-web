@@ -264,7 +264,7 @@
             es: {
                 back: 'Volver',
                 title: 'Privacy Policy',
-                updated: 'Last updated: April 2026',
+                updated: 'Last updated: May 2026',
                 intro: 'En Feel-In valoramos tu privacidad. Esta privacy policy describe qu\u00e9 informaci\u00f3n recopilamos, c\u00f3mo la utilizamos, cu\u00e1les son tus derechos y con qu\u00e9 base legal tratamos tus datos.',
                 sections: [
                     {
@@ -273,8 +273,9 @@
                             '1.1. Informaci\u00f3n de registro: nombre, apellido, nickname, email (del proveedor de autenticaci\u00f3n), fecha de nacimiento, g\u00e9nero, pa\u00eds, avatar seleccionado.',
                             '1.2. Informaci\u00f3n generada por el uso: respuestas a preguntas, mensajes de chat, evaluaciones (me gusta/no me gusta), historial de partidas, reportes de usuarios, reportes de preguntas, tickets de soporte, transacciones de Spark, preferencias de notificaciones, partidas ocultas.',
                             '1.3. Informaci\u00f3n derivada: etiquetas tem\u00e1ticas de inter\u00e9s extra\u00eddas autom\u00e1ticamente de tus respuestas aprobadas (ver secci\u00f3n 5).',
-                            '1.4. Informaci\u00f3n t\u00e9cnica: identificador de dispositivo (para notificaciones push), idioma del dispositivo, informaci\u00f3n de autenticaci\u00f3n, datos de interacci\u00f3n con anuncios publicitarios (recopilados por Google AdMob).',
-                            '1.5. Informaci\u00f3n de ubicaci\u00f3n (opcional): si activ\u00e1s la funci\u00f3n de ubicaci\u00f3n, recopilamos tu posici\u00f3n geogr\u00e1fica aproximada (latitud y longitud) exclusivamente al momento de crear una partida. Esta informaci\u00f3n es opcional y pod\u00e9s activarla o desactivarla en cualquier momento desde la configuraci\u00f3n de la app o durante el registro.'
+                            '1.4. Informaci\u00f3n t\u00e9cnica: identificador de dispositivo (para notificaciones push), idioma del dispositivo, informaci\u00f3n de autenticaci\u00f3n, datos de interacci\u00f3n con anuncios publicitarios (recopilados por Google AdMob), datos de diagn\u00f3stico de fallos (stack traces, modelo y versi\u00f3n del sistema operativo, recopilados por Firebase Crashlytics cuando ocurre un error).',
+                            '1.5. Informaci\u00f3n de ubicaci\u00f3n (opcional): si activ\u00e1s la funci\u00f3n de ubicaci\u00f3n, recopilamos tu posici\u00f3n geogr\u00e1fica aproximada (latitud y longitud) exclusivamente al momento de crear una partida. Esta informaci\u00f3n es opcional y pod\u00e9s activarla o desactivarla en cualquier momento desde la configuraci\u00f3n de la app o durante el registro.',
+                            '1.6. Historial de transacciones de Spark: cada operaci\u00f3n que modifica tu balance de Spark (compras, recompensas por video, costos de partida, recargas, reembolsos) queda registrada en un libro de transacciones interno con fecha, monto y motivo. Este registro se conserva durante 365 d\u00edas con fines de auditor\u00eda y soporte (ver secci\u00f3n 10).'
                         ]
                     },
                     {
@@ -324,9 +325,11 @@
                         items: [
                             'Feel-In utiliza los siguientes servicios de terceros que pueden procesar tus datos:',
                             '7.1. Firebase (Google Cloud Platform): almacenamiento de datos, autenticaci\u00f3n, funciones de servidor, mensajer\u00eda push.',
-                            '7.2. Google Gemini: moderaci\u00f3n de respuestas y extracci\u00f3n de etiquetas tem\u00e1ticas.',
-                            '7.3. Google AdMob: exhibici\u00f3n de anuncios publicitarios. AdMob puede recopilar identificadores de dispositivo, datos de interacci\u00f3n con anuncios y otra informaci\u00f3n t\u00e9cnica para personalizaci\u00f3n publicitaria. Pod\u00e9s gestionar tus preferencias de publicidad personalizada desde la configuraci\u00f3n de tu dispositivo.',
-                            '7.4. RevenueCat: procesamiento de compras dentro de la aplicaci\u00f3n. RevenueCat recibe informaci\u00f3n de transacciones y datos de la plataforma de pago (Apple/Google) necesarios para gestionar las compras.',
+                            '7.2. Firebase Crashlytics (Google): recopilaci\u00f3n de datos de diagn\u00f3stico cuando la app sufre un fallo (stack traces, identificador an\u00f3nimo de instalaci\u00f3n, modelo de dispositivo, versi\u00f3n del sistema operativo, idioma). Estos datos se utilizan exclusivamente para detectar y corregir errores. Crashlytics no recopila informaci\u00f3n personalmente identificable.',
+                            '7.3. Firebase Analytics (Google): m\u00e9tricas de uso pseud\u00f3nimas asociadas a un identificador an\u00f3nimo de instalaci\u00f3n de la app. Procesa eventos de uso (ej. partidas creadas, compras completadas) y propiedades de perfil (ej. pa\u00eds, balance de Spark, fecha de registro). No se recopilan datos personalmente identificables ni se cruzan con otros productos de Google sin tu consentimiento.',
+                            '7.4. Google Gemini: moderaci\u00f3n de respuestas y extracci\u00f3n de etiquetas tem\u00e1ticas.',
+                            '7.5. Google AdMob: exhibici\u00f3n de anuncios publicitarios. AdMob puede recopilar identificadores de dispositivo, datos de interacci\u00f3n con anuncios y otra informaci\u00f3n t\u00e9cnica para personalizaci\u00f3n publicitaria. Pod\u00e9s gestionar tus preferencias de publicidad personalizada desde la configuraci\u00f3n de tu dispositivo.',
+                            '7.6. RevenueCat: procesamiento de compras dentro de la aplicaci\u00f3n. RevenueCat recibe informaci\u00f3n de transacciones y datos de la plataforma de pago (Apple/Google) necesarios para gestionar las compras.',
                             'Cada servicio de terceros opera bajo su propia privacy policy.'
                         ]
                     },
@@ -357,8 +360,9 @@
                             '10.3. Partidas eliminadas: se retienen 30 d\u00edas tras la eliminaci\u00f3n antes de su borrado permanente.',
                             '10.4. Notificaciones en la app: se eliminan autom\u00e1ticamente despu\u00e9s de 3 d\u00edas.',
                             '10.5. Datos de ubicaci\u00f3n: se almacenan temporalmente en la cola de emparejamiento y se eliminan autom\u00e1ticamente cuando se encuentra una conexi\u00f3n o cuando la b\u00fasqueda expira. No se conservan de forma permanente.',
-                            '10.6. Reportes y tickets de soporte: se conservan mientras sean necesarios para la gesti\u00f3n de la plataforma.',
-                            '10.7. Al eliminar tu cuenta, todos tus datos personales se borran de forma inmediata y permanente.'
+                            '10.6. Historial de transacciones de Spark (spark_ledger): se conserva durante 365 d\u00edas con fines de auditor\u00eda y soporte, luego se elimina autom\u00e1ticamente.',
+                            '10.7. Reportes y tickets de soporte: se conservan mientras sean necesarios para la gesti\u00f3n de la plataforma.',
+                            '10.8. Al eliminar tu cuenta, todos tus datos personales se borran de forma inmediata y permanente.'
                         ]
                     },
                     {
@@ -372,8 +376,9 @@
                         title: '12. Cookies y rastreo',
                         items: [
                             '12.1. Feel-In no utiliza cookies. Utiliza almacenamiento local del dispositivo para preferencias de sesi\u00f3n.',
-                            '12.2. Utilizamos Firebase Analytics para m\u00e9tricas agregadas an\u00f3nimas.',
-                            '12.3. Google AdMob puede utilizar identificadores publicitarios del dispositivo (IDFA en iOS, GAID en Android) para personalizaci\u00f3n de anuncios, sujeto a la configuraci\u00f3n de privacidad del dispositivo del usuario.'
+                            '12.2. Utilizamos Firebase Analytics para m\u00e9tricas de uso pseud\u00f3nimas (eventos de actividad y propiedades de perfil) asociadas a un identificador an\u00f3nimo de instalaci\u00f3n. Estas m\u00e9tricas se usan internamente para entender el uso del producto y mejorar la experiencia. No se cruzan con otros servicios de Google sin tu consentimiento.',
+                            '12.3. Google AdMob puede utilizar identificadores publicitarios del dispositivo (IDFA en iOS, GAID en Android) para personalizaci\u00f3n de anuncios, sujeto a la configuraci\u00f3n de privacidad del dispositivo del usuario.',
+                            '12.4. App Tracking Transparency (iOS): en dispositivos iOS, la app solicita tu autorizaci\u00f3n expl\u00edcita antes de acceder al IDFA (identificador publicitario). Si no conced\u00e9s autorizaci\u00f3n, los anuncios mostrados ser\u00e1n contextuales y no personalizados. Pod\u00e9s cambiar esta decisi\u00f3n en cualquier momento desde Ajustes \u2192 Privacidad y seguridad \u2192 Seguimiento.'
                         ]
                     },
                     {
@@ -400,7 +405,7 @@
             en: {
                 back: 'Back',
                 title: 'Privacy Policy',
-                updated: 'Last updated: April 2026',
+                updated: 'Last updated: May 2026',
                 intro: 'At Feel-In, we value your privacy. This policy describes what information we collect, how we use it, what your rights are, and the legal basis for processing your data.',
                 sections: [
                     {
@@ -409,8 +414,9 @@
                             '1.1. Registration information: name, surname, nickname, email (from authentication provider), date of birth, gender, country, selected avatar.',
                             '1.2. Usage-generated information: question responses, chat messages, evaluations (like/no like), game history, user reports, question reports, support tickets, Spark transactions, notification preferences, hidden games.',
                             '1.3. Derived information: thematic interest tags automatically extracted from your approved responses (see section 5).',
-                            '1.4. Technical information: device identifier (for push notifications), device language, authentication information, ad interaction data (collected by Google AdMob).',
-                            '1.5. Location information (optional): if you enable the location feature, we collect your approximate geographic position (latitude and longitude) exclusively at the time of creating a game. This information is optional and you can enable or disable it at any time from the app settings or during registration.'
+                            '1.4. Technical information: device identifier (for push notifications), device language, authentication information, ad interaction data (collected by Google AdMob), crash diagnostic data (stack traces, device model and operating system version, collected by Firebase Crashlytics when an error occurs).',
+                            '1.5. Location information (optional): if you enable the location feature, we collect your approximate geographic position (latitude and longitude) exclusively at the time of creating a game. This information is optional and you can enable or disable it at any time from the app settings or during registration.',
+                            '1.6. Spark transaction history: every operation that modifies your Spark balance (purchases, video rewards, game costs, recharges, refunds) is recorded in an internal ledger with date, amount and reason. This record is retained for 365 days for audit and support purposes (see section 10).'
                         ]
                     },
                     {
@@ -460,9 +466,11 @@
                         items: [
                             'Feel-In uses the following third-party services that may process your data:',
                             '7.1. Firebase (Google Cloud Platform): data storage, authentication, server functions, push messaging.',
-                            '7.2. Google Gemini: response moderation and thematic tag extraction.',
-                            '7.3. Google AdMob: ad display. AdMob may collect device identifiers, ad interaction data, and other technical information for ad personalization. You can manage your personalized advertising preferences from your device settings.',
-                            '7.4. RevenueCat: in-app purchase processing. RevenueCat receives transaction information and payment platform data (Apple/Google) necessary to manage purchases.',
+                            '7.2. Firebase Crashlytics (Google): collection of diagnostic data when the app crashes (stack traces, anonymous installation identifier, device model, operating system version, language). This data is used solely to detect and fix bugs. Crashlytics does not collect personally identifiable information.',
+                            '7.3. Firebase Analytics (Google): pseudonymous usage metrics tied to an anonymous app installation identifier. Processes usage events (e.g., games created, purchases completed) and profile properties (e.g., country, Spark balance, registration date). No personally identifiable data is collected, nor is data cross-referenced with other Google products without your consent.',
+                            '7.4. Google Gemini: response moderation and thematic tag extraction.',
+                            '7.5. Google AdMob: ad display. AdMob may collect device identifiers, ad interaction data, and other technical information for ad personalization. You can manage your personalized advertising preferences from your device settings.',
+                            '7.6. RevenueCat: in-app purchase processing. RevenueCat receives transaction information and payment platform data (Apple/Google) necessary to manage purchases.',
                             'Each third-party service operates under its own privacy policy.'
                         ]
                     },
@@ -493,8 +501,9 @@
                             '10.3. Deleted games: retained for 30 days after deletion before permanent erasure.',
                             '10.4. In-app notifications: automatically deleted after 3 days.',
                             '10.5. Location data: temporarily stored in the matchmaking queue and automatically deleted when a match is found or when the search expires. Not retained permanently.',
-                            '10.6. Reports and support tickets: retained as long as necessary for platform management.',
-                            '10.7. Upon account deletion, all your personal data is erased immediately and permanently.'
+                            '10.6. Spark transaction history (spark_ledger): retained for 365 days for audit and support purposes, then automatically deleted.',
+                            '10.7. Reports and support tickets: retained as long as necessary for platform management.',
+                            '10.8. Upon account deletion, all your personal data is erased immediately and permanently.'
                         ]
                     },
                     {
@@ -508,8 +517,9 @@
                         title: '12. Cookies and tracking',
                         items: [
                             '12.1. Feel-In does not use cookies. It uses local device storage for session preferences.',
-                            '12.2. We use Firebase Analytics for aggregated anonymous metrics.',
-                            '12.3. Google AdMob may use device advertising identifiers (IDFA on iOS, GAID on Android) for ad personalization, subject to the user\u2019s device privacy settings.'
+                            '12.2. We use Firebase Analytics for pseudonymous usage metrics (activity events and profile properties) tied to an anonymous app installation identifier. These metrics are used internally to understand product usage and improve the experience. They are not cross-referenced with other Google services without your consent.',
+                            '12.3. Google AdMob may use device advertising identifiers (IDFA on iOS, GAID on Android) for ad personalization, subject to the user\u2019s device privacy settings.',
+                            '12.4. App Tracking Transparency (iOS): on iOS devices, the app requests your explicit authorization before accessing the IDFA (advertising identifier). If you do not grant authorization, ads displayed will be contextual rather than personalized. You can change this decision at any time from Settings \u2192 Privacy & Security \u2192 Tracking.'
                         ]
                     },
                     {
@@ -536,7 +546,7 @@
             pt: {
                 back: 'Voltar',
                 title: 'Privacy Policy',
-                updated: 'Last updated: April 2026',
+                updated: 'Last updated: May 2026',
                 intro: 'No Feel-In, valorizamos sua privacidade. Esta privacy policy descreve quais informa\u00e7\u00f5es coletamos, como as utilizamos, quais s\u00e3o seus direitos e a base legal para o tratamento dos seus dados.',
                 sections: [
                     {
@@ -545,8 +555,9 @@
                             '1.1. Informa\u00e7\u00f5es de registro: nome, sobrenome, apelido, email (do provedor de autentica\u00e7\u00e3o), data de nascimento, g\u00eanero, pa\u00eds, avatar selecionado.',
                             '1.2. Informa\u00e7\u00f5es geradas pelo uso: respostas a perguntas, mensagens de chat, avalia\u00e7\u00f5es (gostei/n\u00e3o gostei), hist\u00f3rico de partidas, den\u00fancias de usu\u00e1rios, den\u00fancias de perguntas, tickets de suporte, transa\u00e7\u00f5es de Spark, prefer\u00eancias de notifica\u00e7\u00f5es, partidas ocultas.',
                             '1.3. Informa\u00e7\u00f5es derivadas: etiquetas tem\u00e1ticas de interesse extra\u00eddas automaticamente de suas respostas aprovadas (veja se\u00e7\u00e3o 5).',
-                            '1.4. Informa\u00e7\u00f5es t\u00e9cnicas: identificador de dispositivo (para notifica\u00e7\u00f5es push), idioma do dispositivo, informa\u00e7\u00f5es de autentica\u00e7\u00e3o, dados de intera\u00e7\u00e3o com an\u00fancios publicit\u00e1rios (coletados pelo Google AdMob).',
-                            '1.5. Informa\u00e7\u00f5es de localiza\u00e7\u00e3o (opcional): se voc\u00ea ativar a fun\u00e7\u00e3o de localiza\u00e7\u00e3o, coletamos sua posi\u00e7\u00e3o geogr\u00e1fica aproximada (latitude e longitude) exclusivamente no momento de criar uma partida. Essa informa\u00e7\u00e3o \u00e9 opcional e voc\u00ea pode ativ\u00e1-la ou desativ\u00e1-la a qualquer momento nas configura\u00e7\u00f5es do app ou durante o registro.'
+                            '1.4. Informa\u00e7\u00f5es t\u00e9cnicas: identificador de dispositivo (para notifica\u00e7\u00f5es push), idioma do dispositivo, informa\u00e7\u00f5es de autentica\u00e7\u00e3o, dados de intera\u00e7\u00e3o com an\u00fancios publicit\u00e1rios (coletados pelo Google AdMob), dados de diagn\u00f3stico de falhas (stack traces, modelo e vers\u00e3o do sistema operacional, coletados pelo Firebase Crashlytics quando ocorre um erro).',
+                            '1.5. Informa\u00e7\u00f5es de localiza\u00e7\u00e3o (opcional): se voc\u00ea ativar a fun\u00e7\u00e3o de localiza\u00e7\u00e3o, coletamos sua posi\u00e7\u00e3o geogr\u00e1fica aproximada (latitude e longitude) exclusivamente no momento de criar uma partida. Essa informa\u00e7\u00e3o \u00e9 opcional e voc\u00ea pode ativ\u00e1-la ou desativ\u00e1-la a qualquer momento nas configura\u00e7\u00f5es do app ou durante o registro.',
+                            '1.6. Hist\u00f3rico de transa\u00e7\u00f5es de Spark: cada opera\u00e7\u00e3o que modifica seu saldo de Spark (compras, recompensas por v\u00eddeo, custos de partida, recargas, reembolsos) fica registrada em um livro de transa\u00e7\u00f5es interno com data, valor e motivo. Esse registro \u00e9 conservado por 365 dias para fins de auditoria e suporte (veja se\u00e7\u00e3o 10).'
                         ]
                     },
                     {
@@ -596,9 +607,11 @@
                         items: [
                             'O Feel-In utiliza os seguintes servi\u00e7os de terceiros que podem tratar seus dados:',
                             '7.1. Firebase (Google Cloud Platform): armazenamento de dados, autentica\u00e7\u00e3o, fun\u00e7\u00f5es de servidor, mensagens push.',
-                            '7.2. Google Gemini: modera\u00e7\u00e3o de respostas e extra\u00e7\u00e3o de etiquetas tem\u00e1ticas.',
-                            '7.3. Google AdMob: exibi\u00e7\u00e3o de an\u00fancios publicit\u00e1rios. O AdMob pode coletar identificadores de dispositivo, dados de intera\u00e7\u00e3o com an\u00fancios e outras informa\u00e7\u00f5es t\u00e9cnicas para personaliza\u00e7\u00e3o publicit\u00e1ria. Voc\u00ea pode gerenciar suas prefer\u00eancias de publicidade personalizada nas configura\u00e7\u00f5es do seu dispositivo.',
-                            '7.4. RevenueCat: processamento de compras dentro do aplicativo. A RevenueCat recebe informa\u00e7\u00f5es de transa\u00e7\u00f5es e dados da plataforma de pagamento (Apple/Google) necess\u00e1rios para gerenciar as compras.',
+                            '7.2. Firebase Crashlytics (Google): coleta de dados de diagn\u00f3stico quando o app sofre uma falha (stack traces, identificador an\u00f4nimo de instala\u00e7\u00e3o, modelo de dispositivo, vers\u00e3o do sistema operacional, idioma). Esses dados s\u00e3o utilizados exclusivamente para detectar e corrigir erros. O Crashlytics n\u00e3o coleta informa\u00e7\u00f5es pessoalmente identific\u00e1veis.',
+                            '7.3. Firebase Analytics (Google): m\u00e9tricas de uso pseud\u00f4nimas associadas a um identificador an\u00f4nimo de instala\u00e7\u00e3o do app. Processa eventos de uso (ex: partidas criadas, compras conclu\u00eddas) e propriedades de perfil (ex: pa\u00eds, saldo de Spark, data de registro). N\u00e3o s\u00e3o coletados dados pessoalmente identific\u00e1veis nem cruzados com outros produtos do Google sem seu consentimento.',
+                            '7.4. Google Gemini: modera\u00e7\u00e3o de respostas e extra\u00e7\u00e3o de etiquetas tem\u00e1ticas.',
+                            '7.5. Google AdMob: exibi\u00e7\u00e3o de an\u00fancios publicit\u00e1rios. O AdMob pode coletar identificadores de dispositivo, dados de intera\u00e7\u00e3o com an\u00fancios e outras informa\u00e7\u00f5es t\u00e9cnicas para personaliza\u00e7\u00e3o publicit\u00e1ria. Voc\u00ea pode gerenciar suas prefer\u00eancias de publicidade personalizada nas configura\u00e7\u00f5es do seu dispositivo.',
+                            '7.6. RevenueCat: processamento de compras dentro do aplicativo. A RevenueCat recebe informa\u00e7\u00f5es de transa\u00e7\u00f5es e dados da plataforma de pagamento (Apple/Google) necess\u00e1rios para gerenciar as compras.',
                             'Cada servi\u00e7o de terceiros opera sob sua pr\u00f3pria privacy policy.'
                         ]
                     },
@@ -629,8 +642,9 @@
                             '10.3. Partidas eliminadas: retidas por 30 dias ap\u00f3s a elimina\u00e7\u00e3o antes da exclus\u00e3o permanente.',
                             '10.4. Notifica\u00e7\u00f5es no app: eliminadas automaticamente ap\u00f3s 3 dias.',
                             '10.5. Dados de localiza\u00e7\u00e3o: armazenados temporariamente na fila de emparelhamento e eliminados automaticamente quando uma conex\u00e3o \u00e9 encontrada ou quando a busca expira. N\u00e3o s\u00e3o conservados de forma permanente.',
-                            '10.6. Den\u00fancias e tickets de suporte: conservados enquanto forem necess\u00e1rios para a gest\u00e3o da plataforma.',
-                            '10.7. Ao eliminar sua conta, todos os seus dados pessoais s\u00e3o apagados de forma imediata e permanente.'
+                            '10.6. Hist\u00f3rico de transa\u00e7\u00f5es de Spark (spark_ledger): conservado por 365 dias para fins de auditoria e suporte, sendo ent\u00e3o eliminado automaticamente.',
+                            '10.7. Den\u00fancias e tickets de suporte: conservados enquanto forem necess\u00e1rios para a gest\u00e3o da plataforma.',
+                            '10.8. Ao eliminar sua conta, todos os seus dados pessoais s\u00e3o apagados de forma imediata e permanente.'
                         ]
                     },
                     {
@@ -644,8 +658,9 @@
                         title: '12. Cookies e rastreamento',
                         items: [
                             '12.1. O Feel-In n\u00e3o utiliza cookies. Utiliza armazenamento local do dispositivo para prefer\u00eancias de sess\u00e3o.',
-                            '12.2. Utilizamos o Firebase Analytics para m\u00e9tricas agregadas an\u00f4nimas.',
-                            '12.3. O Google AdMob pode utilizar identificadores publicit\u00e1rios do dispositivo (IDFA no iOS, GAID no Android) para personaliza\u00e7\u00e3o de an\u00fancios, sujeito \u00e0s configura\u00e7\u00f5es de privacidade do dispositivo do usu\u00e1rio.'
+                            '12.2. Utilizamos o Firebase Analytics para m\u00e9tricas de uso pseud\u00f4nimas (eventos de atividade e propriedades de perfil) associadas a um identificador an\u00f4nimo de instala\u00e7\u00e3o. Essas m\u00e9tricas s\u00e3o usadas internamente para entender o uso do produto e melhorar a experi\u00eancia. N\u00e3o s\u00e3o cruzadas com outros servi\u00e7os do Google sem o seu consentimento.',
+                            '12.3. O Google AdMob pode utilizar identificadores publicit\u00e1rios do dispositivo (IDFA no iOS, GAID no Android) para personaliza\u00e7\u00e3o de an\u00fancios, sujeito \u00e0s configura\u00e7\u00f5es de privacidade do dispositivo do usu\u00e1rio.',
+                            '12.4. App Tracking Transparency (iOS): em dispositivos iOS, o app solicita sua autoriza\u00e7\u00e3o expl\u00edcita antes de acessar o IDFA (identificador publicit\u00e1rio). Se voc\u00ea n\u00e3o conceder autoriza\u00e7\u00e3o, os an\u00fancios exibidos ser\u00e3o contextuais e n\u00e3o personalizados. Voc\u00ea pode alterar essa decis\u00e3o a qualquer momento em Ajustes \u2192 Privacidade e Seguran\u00e7a \u2192 Rastreamento.'
                         ]
                     },
                     {
