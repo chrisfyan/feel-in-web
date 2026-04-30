@@ -105,7 +105,7 @@
 
       heroH1Light: 'Beyond',
       heroH1Bold: 'appearances',
-      heroCtaPrimary: ‘Subscribe for updates’,
+      heroCtaPrimary: 'Subscribe for updates',
       heroStoreNote: 'Coming soon',
 
       storeIosLine1: 'App Store',
