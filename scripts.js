@@ -31,7 +31,6 @@
 
       heroH1Light: 'Más allá',
       heroH1Bold: 'de las apariencias',
-      heroSub: 'Respondes preguntas, evalúas las respuestas de tu conexión y, cuantas más coincidencias, más cerca de conocerse.',
       heroCtaPrimary: 'Suscríbete a las novedades',
       heroStoreNote: 'Próximamente',
 
@@ -106,8 +105,7 @@
 
       heroH1Light: 'Beyond',
       heroH1Bold: 'appearances',
-      heroSub: 'You answer questions, rate your match’s answers, and the more you overlap, the closer you get to meeting.',
-      heroCtaPrimary: 'Subscribe for updates',
+      heroCtaPrimary: ‘Subscribe for updates’,
       heroStoreNote: 'Coming soon',
 
       storeIosLine1: 'App Store',
@@ -181,7 +179,6 @@
 
       heroH1Light: 'Além das',
       heroH1Bold: 'aparências',
-      heroSub: 'Você responde perguntas, avalia as respostas da sua conexão e, quanto mais coincidem, mais perto de se conhecerem.',
       heroCtaPrimary: 'Receba as novidades',
       heroStoreNote: 'Em breve',
 
