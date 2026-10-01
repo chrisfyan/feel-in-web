@@ -31,6 +31,7 @@
 
       heroH1Light: 'Más allá',
       heroH1Bold: 'de las apariencias',
+      heroSub: 'Feel-In es una app para iOS y Android donde adultos (18+) conocen gente nueva —para una amistad o algo más— respondiendo preguntas por escrito, antes de ver quién está del otro lado.',
       heroCtaPrimary: 'Suscríbete a las novedades',
       heroStoreNote: 'Próximamente',
 
@@ -74,6 +75,17 @@
       previewNoteTitleBold: 'sin apuro',
       previewNoteCopy: 'Cada categoría tiene su atmósfera y su ritmo. Puedes responder ahora, mañana o la semana que viene.',
 
+      aboutTitleLight: 'Sobre',
+      aboutTitleBold: 'Feel-In',
+      aboutSub: 'Lo esencial, sin vueltas: qué es la app y qué hacemos con tus datos.',
+      aboutWhatTitle: 'Qué es Feel-In',
+      aboutWhatCopy: 'Una app social para conocer personas a partir de lo que piensan, no de cómo se ven. Te emparejamos con alguien según tus preferencias y responden preguntas por turnos. La identidad se revela de a poco y el chat solo se abre si ambos lo piden. Exclusiva para mayores de 18 años.',
+      aboutTextTitle: 'Solo texto, nunca fotos',
+      aboutTextCopy: 'En Feel-In no se suben fotos: cada perfil usa un avatar ilustrado de un set fijo. La app no crea, edita ni aloja imágenes de personas. Usamos los servicios de IA de Google únicamente para procesar texto, por ejemplo para moderar las respuestas escritas antes de mostrarlas.',
+      aboutGoogleTitle: 'Tu cuenta de Google',
+      aboutGoogleCopy: 'Puedes registrarte con Google Sign-In. De tu cuenta solo usamos tu nombre y tu email (los permisos básicos de inicio de sesión), únicamente para crear tu cuenta, identificarte y darte soporte. Tu email y tu apellido nunca se muestran a otros usuarios; tu nombre de pila se revela a la otra persona solo después de su primera Vibra. No vendemos tus datos de Google ni los usamos para publicidad, y no accedemos a tus contactos, Gmail, Drive ni ningún otro servicio de Google.',
+      aboutPrivacyLink: 'Lee la Política de privacidad completa',
+
       nlTitleLight: 'Quédate',
       nlTitleBold: 'cerca',
       nlSub: 'Te contamos antes que a nadie las novedades.',
@@ -81,7 +93,7 @@
       nlFine: 'Sin spam. Puedes darte de baja cuando quieras.',
 
       footerContact: 'Contacto',
-      footerPrivacy: 'Privacidad',
+      footerPrivacy: 'Política de privacidad',
       footerCopy: '© 2026 Feel-In · Hecho con intención',
 
       modalTitleStore: 'Ya falta poco',
@@ -105,6 +117,7 @@
 
       heroH1Light: 'Beyond',
       heroH1Bold: 'appearances',
+      heroSub: 'Feel-In is an iOS and Android app where adults (18+) meet new people — as friends or something more — by answering written questions before seeing who’s on the other side.',
       heroCtaPrimary: 'Subscribe for updates',
       heroStoreNote: 'Coming soon',
 
@@ -148,6 +161,17 @@
       previewNoteTitleBold: 'no rush',
       previewNoteCopy: 'Each category has its own atmosphere and pace. Answer now, tomorrow, or next week.',
 
+      aboutTitleLight: 'About',
+      aboutTitleBold: 'Feel-In',
+      aboutSub: 'The essentials, plainly: what the app is and what we do with your data.',
+      aboutWhatTitle: 'What Feel-In is',
+      aboutWhatCopy: 'A social app for meeting people through what they think, not how they look. We pair you with someone based on your preferences and you take turns answering questions. Identities are revealed gradually, and the chat only opens if you both ask for it. Adults only (18+).',
+      aboutTextTitle: 'Text only, never photos',
+      aboutTextCopy: 'Feel-In has no photo uploads: every profile uses an illustrated avatar from a fixed set. The app does not create, edit or host images of people. We use Google’s AI services only to process text — for example, to moderate written answers before they are shown.',
+      aboutGoogleTitle: 'Your Google account',
+      aboutGoogleCopy: 'You can sign up with Google Sign-In. From your account we only use your name and email address (the basic sign-in permissions), solely to create your account, identify you and provide support. Your email and last name are never shown to other users; your first name is revealed to the other person only after your first Vibe together. We don’t sell your Google data or use it for advertising, and we don’t access your contacts, Gmail, Drive or any other Google service.',
+      aboutPrivacyLink: 'Read the full Privacy Policy',
+
       nlTitleLight: 'Stay',
       nlTitleBold: 'close',
       nlSub: "Hear about what's new before anyone else.",
@@ -155,7 +179,7 @@
       nlFine: "No spam. Unsubscribe whenever you want.",
 
       footerContact: 'Contact',
-      footerPrivacy: 'Privacy',
+      footerPrivacy: 'Privacy Policy',
       footerCopy: '© 2026 Feel-In · Made with intention',
 
       modalTitleStore: 'Almost there',
@@ -179,6 +203,7 @@
 
       heroH1Light: 'Além das',
       heroH1Bold: 'aparências',
+      heroSub: 'Feel-In é um app para iOS e Android onde adultos (18+) conhecem pessoas novas — para uma amizade ou algo mais — respondendo perguntas por escrito, antes de ver quem está do outro lado.',
       heroCtaPrimary: 'Receba as novidades',
       heroStoreNote: 'Em breve',
 
@@ -222,6 +247,17 @@
       previewNoteTitleBold: 'sem pressa',
       previewNoteCopy: 'Cada categoria tem sua atmosfera e seu ritmo. Responde agora, amanhã ou semana que vem.',
 
+      aboutTitleLight: 'Sobre o',
+      aboutTitleBold: 'Feel-In',
+      aboutSub: 'O essencial, sem rodeios: o que é o app e o que fazemos com os seus dados.',
+      aboutWhatTitle: 'O que é o Feel-In',
+      aboutWhatCopy: 'Um app social para conhecer pessoas pelo que pensam, não pela aparência. Formamos um par com alguém de acordo com as suas preferências e vocês respondem perguntas em turnos. A identidade é revelada aos poucos, e o chat só abre se os dois pedirem. Exclusivo para maiores de 18 anos.',
+      aboutTextTitle: 'Só texto, nunca fotos',
+      aboutTextCopy: 'No Feel-In não há envio de fotos: cada perfil usa um avatar ilustrado de um conjunto fixo. O app não cria, edita nem hospeda imagens de pessoas. Usamos os serviços de IA do Google apenas para processar texto — por exemplo, para moderar as respostas escritas antes de serem exibidas.',
+      aboutGoogleTitle: 'Sua conta Google',
+      aboutGoogleCopy: 'Você pode se cadastrar com o Google Sign-In. Da sua conta usamos apenas seu nome e seu email (as permissões básicas de login), somente para criar sua conta, identificar você e oferecer suporte. Seu email e seu sobrenome nunca são mostrados a outros usuários; seu primeiro nome só é revelado à outra pessoa depois da primeira Vibra entre vocês. Não vendemos seus dados do Google nem os usamos para publicidade, e não acessamos seus contatos, Gmail, Drive ou qualquer outro serviço do Google.',
+      aboutPrivacyLink: 'Leia a Política de Privacidade completa',
+
       nlTitleLight: 'Fique por',
       nlTitleBold: 'perto',
       nlSub: 'Saiba das novidades antes de todo mundo.',
@@ -229,7 +265,7 @@
       nlFine: 'Sem spam. Você pode sair quando quiser.',
 
       footerContact: 'Contato',
-      footerPrivacy: 'Privacidade',
+      footerPrivacy: 'Política de Privacidade',
       footerCopy: '© 2026 Feel-In · Feito com intenção',
 
       modalTitleStore: 'Falta pouco',

@@ -382,6 +382,19 @@ section { position: relative; }
   color: transparent;
 }
 
+.hero__sub {
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: calc(-1 * var(--s-4)) auto var(--s-7);
+  text-wrap: pretty;
+}
+.js-animate .hero__sub {
+  animation: fadeUp 1s var(--ease-out) 0.4s both;
+}
+
 .hero__cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -640,6 +653,20 @@ section { position: relative; }
 .pillar--center {
   text-align: center;
 }
+
+.about__more {
+  margin-top: var(--s-7);
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.about__more a {
+  color: var(--lavender);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.about__more a:hover { color: var(--text-primary); }
+.about__more span { margin: 0 var(--s-2); }
 .pillar--center .pillar__icon {
   margin-left: auto;
   margin-right: auto;
