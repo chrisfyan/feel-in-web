@@ -47,6 +47,15 @@ Colors, radii, spacing, fonts, and shadows are all CSS custom properties in `:ro
 
 Key fonts: `--font-display` (Playfair Display) for headings, `--font-body` (Inter) for body text. Icons use Material Symbols Outlined (loaded from Google Fonts).
 
+## Required content (Google OAuth verification)
+
+`feel-in.app` is the verified home page of the Google OAuth consent screen for project `feel-in-prod` (verified 2026-10-01). Google audits this page's **content**: it must state in plain language what the app does and how it uses Google account data. Do **not** remove or water down:
+
+- the hero subtitle (`heroSub`) and the `#about` section (what the app is, 18+, text-only / no photos / Google AI only for text, Google Sign-In data use) — all three languages;
+- the privacy link pointing to `/privacy` (must match the URL in the consent screen).
+
+Facts in `#about` must stay true to the app and its Privacy Policy; if the app starts using more Google data or handling images, update this section first. The `google-site-verification` TXT record on the domain's DNS (Porkbun) must also stay.
+
 ## Deployment
 
 Push to `main` — GitHub Pages serves automatically. The `CNAME` file maps to `feel-in.app`.
